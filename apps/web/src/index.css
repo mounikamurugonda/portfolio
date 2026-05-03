@@ -1,0 +1,365 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #050505;
+  --color-surface: #0f0f11;
+  --color-surface-hover: #1a1a1c;
+  --color-border: #222224;
+  --color-primary: #8b5cf6;
+  --color-primary-hover: #a78bfa;
+  --color-secondary: #06b6d4;
+  --color-accent: #f43f5e;
+  --color-text-main: #f8fafc;
+  --color-text-muted: #94a3b8;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+}
+
+/* ─── Professional Light Theme ─────────────────────────────────────────────── */
+.light {
+  --color-background: #f0f4ff;
+  --color-surface: #ffffff;
+  --color-surface-hover: #eef2ff;
+  --color-border: #dde3f0;
+  --color-text-main: #111827;
+  --color-text-muted: #6b7280;
+  --color-primary: #7c3aed;
+  --color-primary-hover: #6d28d9;
+  --color-secondary: #0891b2;
+}
+
+/* ── Light: body background ── */
+.light body { background-color: var(--color-background); color: var(--color-text-main); }
+
+/* ── Light: glass surfaces ── */
+.light .glass {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-color: rgba(124, 58, 237, 0.12) !important;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06) !important;
+  color: #111827 !important;
+}
+.light .glass-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  border-color: rgba(124, 58, 237, 0.12) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* ── Light: ALL text-white/* utilities ── */
+.light [class*="text-white"] { color: #111827 !important; }
+.light [class*="text-white\/30"] { color: rgba(17, 24, 39, 0.35) !important; }
+.light [class*="text-white\/40"] { color: rgba(17, 24, 39, 0.45) !important; }
+.light [class*="text-white\/60"] { color: rgba(17, 24, 39, 0.6) !important; }
+.light [class*="text-white\/70"] { color: rgba(17, 24, 39, 0.7) !important; }
+.light [class*="text-white\/80"] { color: rgba(17, 24, 39, 0.8) !important; }
+.light [class*="text-white\/90"] { color: rgba(17, 24, 39, 0.9) !important; }
+
+/* ── Light: Global Heading & Content Visibility ── */
+.light section:not(#contact):not(#chatbot) h1, 
+.light section:not(#contact):not(#chatbot) h2, 
+.light section:not(#contact):not(#chatbot) h3, 
+.light section:not(#contact):not(#chatbot) h4 { 
+  color: #111827 !important; 
+}
+.light section:not(#contact):not(#chatbot) p,
+.light section:not(#contact):not(#chatbot) li,
+.light section:not(#contact):not(#chatbot) span:not([class*="bg-"]):not([class*="force-white"]):not([class*="text-primary"]):not([class*="text-secondary"]) {
+  color: #4b5563 !important;
+}
+.light section:not(#contact):not(#chatbot) [class*="text-white"]:not([class*="force-white"]) {
+  color: #111827 !important;
+}
+
+/* Keep primary/secondary/accent text colours */
+.light .text-primary, .light [class*="text-primary"] { color: var(--color-primary) !important; }
+.light .text-secondary, .light [class*="text-secondary"] { color: var(--color-secondary) !important; }
+/* Keep white text on dark backgrounds / gradients */
+.light .force-white,
+.light .bg-primary [class*="text-white"],
+.light .bg-secondary [class*="text-white"],
+.light .btn-primary [class*="text-white"],
+.light [class*="bg-gradient"] [class*="text-white"],
+.light [class*="bg-primary"] [class*="text-white"],
+.light [class*="bg-secondary"] [class*="text-white"] { 
+  color: #ffffff !important; 
+}
+.light .force-white-muted {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* ── Light: bg-white/* (dark semi-transparent tints → purple tints) ── */
+.light [class*="bg-white\/5"]  { background-color: rgba(124, 58, 237, 0.04) !important; }
+.light [class*="bg-white\/10"] { background-color: rgba(124, 58, 237, 0.07) !important; }
+.light [class*="bg-white\/20"] { background-color: rgba(124, 58, 237, 0.1)  !important; }
+
+/* ── Light: bg-black/* (dark surfaces → white surfaces) ── */
+.light [class*="bg-black\/40"] { background-color: rgba(255, 255, 255, 0.9) !important; }
+.light [class*="bg-black\/60"] { background-color: rgba(255, 255, 255, 0.95) !important; }
+.light [class*="bg-black\/80"] { background-color: #ffffff !important; }
+
+/* ── Light: border-white/* ── */
+.light [class*="border-white\/5"]  { border-color: rgba(0, 0, 0, 0.05) !important; }
+.light [class*="border-white\/10"] { border-color: rgba(0, 0, 0, 0.08) !important; }
+.light [class*="border-white\/20"] { border-color: rgba(0, 0, 0, 0.12) !important; }
+.light [class*="border-white\/30"] { border-color: rgba(0, 0, 0, 0.15) !important; }
+
+/* ── Light: placeholder colours ── */
+.light ::placeholder { color: rgba(17, 24, 39, 0.35) !important; }
+
+/* ── Light: form inputs ── */
+.light input, .light textarea {
+  color: var(--color-text-main) !important;
+}
+
+/* ── Light: Experience section expand panel ── */
+.light [class*="border-white\/5"] { border-color: rgba(0,0,0,0.06) !important; }
+
+/* ── Light: skill / tag badges ── */
+.light [class*="bg-secondary\/10"] { background-color: rgba(8, 145, 178, 0.1) !important; }
+.light [class*="bg-secondary\/10"] [class*="text-white"],
+.light [class*="bg-secondary\/10"] span { 
+  color: var(--color-secondary) !important; 
+}
+.light [class*="bg-primary\/10"]  { background-color: rgba(124, 58, 237, 0.08) !important; }
+.light [class*="bg-primary\/10"] [class*="text-white"],
+.light [class*="bg-primary\/10"] span {
+  color: var(--color-primary) !important;
+}
+.light [class*="border-secondary\/20"] { border-color: rgba(8, 145, 178, 0.25) !important; }
+.light [class*="border-primary\/20"] { border-color: rgba(124, 58, 237, 0.2) !important; }
+
+/* ── Light: footer ── */
+.light footer { border-color: rgba(0, 0, 0, 0.08) !important; color: var(--color-text-muted); }
+
+/* Keep Contact and Chatbot cards dark/premium even in light mode */
+.light #contact .glass-card,
+.light #chatbot .glass-card {
+  background: rgba(15, 15, 17, 0.95) !important;
+  border-color: rgba(124, 58, 237, 0.3) !important;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3) !important;
+}
+.light #contact .glass-card [class*="text-white"],
+.light #chatbot .glass-card [class*="text-white"],
+.light #contact .glass-card label,
+.light #chatbot .glass-card h3 {
+  color: #ffffff !important;
+}
+.light #contact .glass-card p,
+.light #chatbot .glass-card p {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.light #contact .glass-card input,
+.light #contact .glass-card textarea {
+  background: rgba(0, 0, 0, 0.4) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+.light #contact .glass-card input::placeholder,
+.light #contact .glass-card textarea::placeholder,
+.light #chatbot .glass-card input::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Navbar specific overrides */
+.light nav a {
+  color: var(--color-text-main) !important;
+}
+.light nav a:not([class*="bg-primary"]):not([class*="bg-gradient"]) {
+  color: var(--color-text-muted) !important;
+}
+.light nav a[class*="text-white"]:not([class*="bg-primary"]):not([class*="bg-gradient"]):hover {
+  color: var(--color-text-main) !important;
+}
+/* Active state pill in light mode */
+.light nav [layoutId="navbar-active"] {
+  background: rgba(124, 58, 237, 0.12) !important;
+}
+.light nav a.text-white:not([class*="bg-primary"]) {
+  color: var(--color-primary) !important;
+}
+
+/* ── Light: button outline ── */
+.light .btn-outline {
+  color: var(--color-primary) !important;
+  border-color: rgba(124, 58, 237, 0.35) !important;
+}
+.light .btn-outline:hover {
+  background: rgba(124, 58, 237, 0.06) !important;
+  border-color: rgba(124, 58, 237, 0.6) !important;
+}
+
+/* ─── Semantic component classes (theme-aware) ────────────────────────────── */
+
+/* AI message bubble — dark default */
+.chat-ai-bubble {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+}
+
+/* Chat input — dark default */
+.chat-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+.chat-input::placeholder { color: rgba(255, 255, 255, 0.2); }
+
+.force-white { color: #ffffff !important; }
+.force-white-muted { color: rgba(255, 255, 255, 0.7) !important; }
+
+/* Status dot border — uses surface token */
+.border-surface { border-color: var(--color-surface) !important; }
+
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: var(--color-background); }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 4px;
+    border: 2px solid var(--color-background);
+  }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(15, 15, 17, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .glass-card {
+    background: linear-gradient(145deg, rgba(30, 30, 34, 0.4) 0%, rgba(15, 15, 17, 0.2) 100%);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  }
+
+  /* ── Buttons ──────────────────────────────────────────────────────────── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+    transition: box-shadow 0.2s, opacity 0.2s;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+  }
+  .btn-primary:hover {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.65);
+    opacity: 0.92;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.4);
+    transition: background 0.2s, border-color 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-secondary:hover {
+    background: rgba(6, 182, 212, 0.2);
+    border-color: rgba(6, 182, 212, 0.7);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: border-color 0.2s, background 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-outline:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  /* ── Layout ───────────────────────────────────────────────────────────── */
+  .section {
+    padding: 6rem 2rem;
+  }
+  @media (min-width: 768px) {
+    .section {
+      padding: 10rem 4rem;
+    }
+  }
+
+  .container {
+    max-width: 85rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .container {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px -5px var(--color-primary); }
+  to   { box-shadow: 0 0 20px  5px var(--color-primary); }
+}

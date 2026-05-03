@@ -1,0 +1,20 @@
+{
+  "name": "mounika-portfolio",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "apps/api"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=apps/web\" \"npm run dev --workspace=apps/api\"",
+    "build": "npm run build --workspace=apps/web",
+    "dev:web": "npm run dev --workspace=apps/web",
+    "dev:api": "npm run dev --workspace=apps/api",
+    "supabase:login": "npx supabase login",
+    "supabase:link": "npx supabase link",
+    "supabase:push": "npx supabase db push"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
