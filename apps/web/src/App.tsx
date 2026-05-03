@@ -29,7 +29,7 @@ function App() {
       <Contact />
 
       <footer className="py-8 text-center text-text-muted border-t border-white/10 mt-20">
-        <p>© {new Date().getFullYear()} Mounika. Built with React & Framer Motion.</p>
+        <p>© {new Date().getFullYear()} Mounika. Crafted with ❤️ using React, TypeScript, Tailwind CSS, Framer Motion, and AI.</p>
       </footer>
     </main>
   );
