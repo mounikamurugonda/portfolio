@@ -23,7 +23,7 @@ export const Contact: React.FC = () => {
       if (!response.ok) throw new Error('Submission failed');
       setStatus('success');
       setFormData({ name: '', email: '', message: '', honeypot: '' });
-    } catch (err) {
+    } catch {
       setStatus('error');
     }
   };

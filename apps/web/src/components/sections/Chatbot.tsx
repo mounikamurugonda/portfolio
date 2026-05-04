@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { SectionWrapper } from '../ui/SectionWrapper';
 import { GlassCard } from '../ui/GlassCard';
 import { fadeInUp } from '../../lib/animations';
@@ -43,7 +43,7 @@ export const Chatbot: React.FC = () => {
       });
       const data = await response.json();
       setMessages(prev => [...prev, { role: 'ai', content: data.reply || "Sorry, I couldn't process that right now." }]);
-    } catch (err) {
+    } catch {
       setMessages(prev => [...prev, { role: 'ai', content: "Mounika's neural sync is currently down for maintenance. Please try again later!" }]);
     } finally {
       setIsLoading(false);

@@ -76,6 +76,41 @@ npm run dev
 - **Frontend:** http://localhost:5173
 - **Backend:** http://localhost:3000
 
+## 🚀 Deployment
+
+### Production Build
+1. Build both applications:
+   ```bash
+   npm run build  # Builds the web app
+   cd apps/api && npm run build  # Builds the API
+   ```
+
+2. Set production environment variables:
+   - Update `apps/api/.env` with production URLs and keys.
+   - Update `apps/web/.env` with production API URL and Supabase keys.
+
+### Hosting Recommendations
+- **Frontend (Web):** Deploy `apps/web/dist` to Vercel, Netlify, or any static host.
+- **Backend (API):** Deploy to Railway, Render, or Heroku. Ensure Node.js 18+.
+- **Database:** Supabase (already configured).
+
+### Environment Variables for Production
+**API (.env):**
+```env
+PORT=3000
+SARVAM_API_KEY=your_production_key
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+RESEND_API_KEY=your_resend_key
+```
+
+**Web (.env):**
+```env
+VITE_API_URL=https://your-api-domain.com/api
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your_anon_key
+```
+
 ## 🤖 AI Persona & RAG
 The chatbot uses **Retrieval-Augmented Generation (RAG)**. 
 - Context is sourced from `apps/api/scripts/seed-data.ts`.
