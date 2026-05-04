@@ -4,6 +4,7 @@ import { SectionWrapper } from '../ui/SectionWrapper';
 import { GlassCard } from '../ui/GlassCard';
 import { fadeInUp } from '../../lib/animations';
 import { NeonButton } from '../ui/NeonButton';
+import { fetcher } from '../../lib/api';
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '', honeypot: '' });
@@ -15,12 +16,10 @@ export const Contact: React.FC = () => {
     
     setStatus('loading');
     try {
-      const response = await fetch('/api/contact', {
+      await fetcher('/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-      if (!response.ok) throw new Error('Submission failed');
       setStatus('success');
       setFormData({ name: '', email: '', message: '', honeypot: '' });
     } catch {

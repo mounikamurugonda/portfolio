@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { SectionWrapper } from '../ui/SectionWrapper';
 import { GlassCard } from '../ui/GlassCard';
 import { fadeInUp } from '../../lib/animations';
+import { fetcher } from '../../lib/api';
 
 export const Chatbot: React.FC = () => {
   const [messages, setMessages] = useState<{role: 'user'|'ai', content: string}[]>([
@@ -36,12 +37,10 @@ export const Chatbot: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/chat', {
+      const data = await fetcher<{ reply?: string }>('/chat', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: userMsg })
       });
-      const data = await response.json();
       setMessages(prev => [...prev, { role: 'ai', content: data.reply || "Sorry, I couldn't process that right now." }]);
     } catch {
       setMessages(prev => [...prev, { role: 'ai', content: "Mounika's neural sync is currently down for maintenance. Please try again later!" }]);
