@@ -123,7 +123,7 @@ const experiences: Experience[] = [
   {
     id: 7,
     role: 'UI Developer',
-    company: 'JNET Technologies Pvt. Ltd.',
+    company: 'XIT Solutions Pvt. Ltd.',
     client: 'WTP Advisors',
     project: 'TransPortal – IC-DISC & Transfer Pricing Platform',
     projectUrl: 'https://www.google.com/search?q=WTP+Advisors+TransPortal+IC-DISC+transfer+pricing',
