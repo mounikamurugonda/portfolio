@@ -5,6 +5,45 @@ import { GlassCard } from '../ui/GlassCard';
 import { fadeInUp } from '../../lib/animations';
 import { fetcher } from '../../lib/api';
 
+const renderInline = (text: string): React.ReactNode[] =>
+  text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith('**') && part.endsWith('**') ? (
+      <strong key={i} className="font-semibold text-white">{part.slice(2, -2)}</strong>
+    ) : (
+      <React.Fragment key={i}>{part}</React.Fragment>
+    )
+  );
+
+const FormattedMessage: React.FC<{ content: string }> = ({ content }) => {
+  const blocks: React.ReactNode[] = [];
+  let listItems: string[] = [];
+
+  const flushList = (key: string) => {
+    if (listItems.length) {
+      blocks.push(
+        <ul key={key} className="list-disc pl-4 space-y-1">
+          {listItems.map((item, i) => <li key={i}>{renderInline(item)}</li>)}
+        </ul>
+      );
+      listItems = [];
+    }
+  };
+
+  content.split('\n').forEach((line, idx) => {
+    const trimmed = line.trim();
+    const bullet = trimmed.match(/^[-*]\s+(.*)$/);
+    if (bullet) {
+      listItems.push(bullet[1]);
+    } else {
+      flushList(`ul-${idx}`);
+      if (trimmed) blocks.push(<p key={`p-${idx}`}>{renderInline(trimmed)}</p>);
+    }
+  });
+  flushList('ul-end');
+
+  return <div className="space-y-2">{blocks}</div>;
+};
+
 export const Chatbot: React.FC = () => {
   const [messages, setMessages] = useState<{role: 'user'|'ai', content: string}[]>([
     { role: 'ai', content: "Hi! I'm Mounika's AI twin. Ask me anything about her skills, experience, or what it's like working with her." }
@@ -81,7 +120,7 @@ export const Chatbot: React.FC = () => {
 
             <div 
               ref={scrollRef}
-              className="flex-1 overflow-y-auto pr-2 space-y-4 mb-4 pb-2 scrollbar-thin scrollbar-thumb-white/10 scroll-smooth"
+              className="flex-1 min-h-0 overflow-y-auto pr-2 space-y-4 mb-4 pb-2 scrollbar-thin scrollbar-thumb-white/10 scroll-smooth"
             >
               {messages.map((msg, i) => (
                 <motion.div 
@@ -97,7 +136,7 @@ export const Chatbot: React.FC = () => {
                         : 'chat-ai-bubble rounded-tl-sm'
                     }`}
                   >
-                    {msg.content}
+                    {msg.role === 'ai' ? <FormattedMessage content={msg.content} /> : msg.content}
                   </div>
                 </motion.div>
               ))}
