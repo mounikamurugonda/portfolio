@@ -20,7 +20,7 @@ interface Experience {
 const experiences: Experience[] = [
   {
     id: 1,
-    role: 'Senior Frontend Developer',
+    role: 'Senior Frontend Architect / Developer',
     company: 'XIT Solutions Inc.',
     client: 'Complyia',
     project: 'Complyia – Enterprise Compliance Platform',
@@ -105,7 +105,7 @@ const experiences: Experience[] = [
   },
   {
     id: 6,
-    role: 'Senior UI Developer',
+    role: 'UI Developer',
     company: 'XIT Solutions Pvt. Ltd.',
     client: 'Deloitte',
     project: 'Section 987 – Tax Compliance Portal',

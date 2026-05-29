@@ -10,7 +10,7 @@ const skillCategories = [
     icon: '🌐',
     color: 'rgba(234, 179, 8, 0.15)',
     skills: [
-      'HTML5', 'CSS3', 'SCSS/SASS', 'JavaScript (ES6+)', 'RxJs', 'TypeScript',
+      'HTML5', 'CSS3', 'SCSS/SASS', 'JavaScript (ES6+)', 'TypeScript', 'RxJS',
       'Responsive Design', 'Pixel-Perfect UI', 'Cross-Browser Compatibility', 'WCAG', 'SEO',
     ],
   },
@@ -19,17 +19,17 @@ const skillCategories = [
     icon: '🏗️',
     color: 'rgba(16, 185, 129, 0.15)',
     skills: [
-      'React (SPA)', 'Next.js (SSR/SSG/ISR)', 'Angular',
+      'React', 'React.js', 'Next.js (SSR/SSG/ISR)', 'Angular', 'AngularJS',
       'Micro-Frontends (Module Federation)', 'Nx Monorepo', 'TurboRepo',
     ],
   },
   {
-    title: 'AI & LLM Integration',
+    title: 'AI & LLM',
     icon: '🤖',
     color: 'rgba(139, 92, 246, 0.2)',
     skills: [
-      'Multimodal RAG applications', 'LLM Integration', 'Cursor',
-      'Windsurf', 'Antigravity', 'AI-Assisted Development',
+      'Multimodal RAG Applications', 'LLM Integration', 'LLM Function Calling',
+      'Cursor', 'Copilot', 'AI-Assisted Development',
     ],
   },
   {
@@ -37,8 +37,8 @@ const skillCategories = [
     icon: '🎨',
     color: 'rgba(236, 72, 153, 0.15)',
     skills: [
-      'Photoshop', 'Figma', 'Tailwind CSS', 'ShadCN UI',
-      'Angular Material', 'Bootstrap', 'Design Systems',
+      'Figma', 'Adobe XD', 'Photoshop', 'Tailwind CSS', 'ShadCN UI',
+      'Radix UI', 'MUI', 'Angular Material', 'Bootstrap', 'Design Systems',
     ],
   },
   {
@@ -46,7 +46,8 @@ const skillCategories = [
     icon: '🗂️',
     color: 'rgba(251, 146, 60, 0.15)',
     skills: [
-      'TanStack Query (React Query)', 'Zustand', 'Redux(RTK)', 'NgRx', 'Context API',
+      'Redux (RTK)', 'NgRx', 'Zustand', 'TanStack Query (React Query)',
+      'Context API (Client/Global/Server State)',
     ],
   },
   {
@@ -62,15 +63,23 @@ const skillCategories = [
     icon: '🔧',
     color: 'rgba(139, 92, 246, 0.15)',
     skills: [
-      'Node.js', 'Express.js', 'MongoDB', 'Supabase', 'Dataverse',
+      'Node.js', 'Express.js', 'Prisma', 'MongoDB', 'Supabase', 'Dataverse',
     ],
   },
   {
-    title: 'Testing & Quality',
+    title: 'CMS & E-commerce',
+    icon: '🛒',
+    color: 'rgba(217, 70, 239, 0.15)',
+    skills: [
+      'WordPress', 'Shopify', 'AEM',
+    ],
+  },
+  {
+    title: 'Testing',
     icon: '🧪',
     color: 'rgba(34, 197, 94, 0.15)',
     skills: [
-      'Jest', 'Playwright', 'vitest', 'Cypress',
+      'Jest', 'Playwright', 'Vitest', 'Cypress', 'React Testing Library',
       'Debugging', 'Chrome DevTools', 'Performance Optimization',
     ],
   },
@@ -80,7 +89,7 @@ const skillCategories = [
     color: 'rgba(6, 182, 212, 0.15)',
     skills: [
       'VS Code', 'Nx', 'Vite', 'Webpack', 'Babel', 'Storybook',
-      'Github', 'Git Extentions', 'CI/CD', 'Docker',
+      'Git', 'GitHub', 'Git Extensions', 'Jira', 'CI/CD', 'Docker',
     ],
   },
   {
@@ -88,7 +97,7 @@ const skillCategories = [
     icon: '☁️',
     color: 'rgba(6, 182, 212, 0.12)',
     skills: [
-      'Vercel', 'Netlify', 'Azure', 'Google Cloud Platform (GCP)',
+      'Azure', 'AWS', 'Vercel', 'Netlify', 'Google Cloud Platform (GCP)',
     ],
   },
   {
@@ -104,7 +113,8 @@ const skillCategories = [
     icon: '🔄',
     color: 'rgba(245, 158, 11, 0.15)',
     skills: [
-      'Agile', 'Scrum', 'Component-Driven Development', 'TDD',
+      'Agile', 'Scrum', 'Component-Driven Development', 'TDD', 'WCAG 2.1 AA',
+      'Architecture Decision Records (ADRs)', 'Code Reviews', 'Mentorship',
     ],
   },
 ];
