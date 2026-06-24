@@ -9,7 +9,7 @@ const navItems = [
   { name: 'Hobbies', href: '#hobbies' },
 ];
 
-const CLOUD_STORY_URL = 'https://63f02208--65e9f78a-f673-44b6-b8ee-abe85b38b80b.lovable.app';
+const CLOUD_STORY_URL = 'https://mounika-murugonda.lovable.app';
 
 export const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -82,12 +82,12 @@ export const Navbar: React.FC = () => {
 
           <div className="w-px h-6 bg-white/20 mx-1 sm:mx-2 hidden sm:block"></div>
 
-          {/* Cloud Story Showcase — external UX portfolio link */}
+          {/* Cloud Story Showcase — external UX portfolio link with curly underline */}
           <a
             href={CLOUD_STORY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:flex items-center gap-1.5 px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium text-white/60 hover:text-white/90 transition-colors"
+            className="wavy-link hidden sm:flex items-center gap-1.5 px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium text-white/60 hover:text-white/90 transition-colors"
           >
             <span>UX Showcase</span>
             <svg className="w-3 h-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">

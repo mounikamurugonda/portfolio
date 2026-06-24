@@ -21,36 +21,36 @@
   --radius-2xl: 1.5rem;
 }
 
-/* ─── Professional Light Theme ─────────────────────────────────────────────── */
+/* ─── Paper-Minimal Light Theme (matches UX portfolio) ─────────────────────── */
 .light {
-  --color-background: #f0f4ff;
+  --color-background: #f2f0eb;
   --color-surface: #ffffff;
-  --color-surface-hover: #eef2ff;
-  --color-border: #dde3f0;
-  --color-text-main: #111827;
+  --color-surface-hover: #eae8e3;
+  --color-border: #ddd9d0;
+  --color-text-main: #1a1a1a;
   --color-text-muted: #6b7280;
-  --color-primary: #7c3aed;
-  --color-primary-hover: #6d28d9;
-  --color-secondary: #0891b2;
+  --color-primary: #1a1a1a;
+  --color-primary-hover: #3f3f46;
+  --color-secondary: #52525b;
 }
 
 /* ── Light: body background ── */
 .light body { background-color: var(--color-background); color: var(--color-text-main); }
 
-/* ── Light: glass surfaces ── */
+/* ── Light: glass surfaces → flat paper cards ── */
 .light .glass {
-  background: rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
-  border-color: rgba(124, 58, 237, 0.12) !important;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06) !important;
-  color: #111827 !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border-color: #e4e4e7 !important;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04) !important;
+  color: #18181b !important;
 }
 .light .glass-card {
-  background: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(12px) !important;
-  border-color: rgba(124, 58, 237, 0.12) !important;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  border-color: #e4e4e7 !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05), 0 4px 16px rgba(0, 0, 0, 0.04) !important;
 }
 
 /* ── Light: ALL text-white/* utilities ── */
@@ -95,21 +95,21 @@
   color: rgba(255, 255, 255, 0.7) !important;
 }
 
-/* ── Light: bg-white/* (dark semi-transparent tints → purple tints) ── */
-.light [class*="bg-white\/5"]  { background-color: rgba(124, 58, 237, 0.04) !important; }
-.light [class*="bg-white\/10"] { background-color: rgba(124, 58, 237, 0.07) !important; }
-.light [class*="bg-white\/20"] { background-color: rgba(124, 58, 237, 0.1)  !important; }
+/* ── Light: bg-white/* (dark semi-transparent tints → warm zinc tints) ── */
+.light [class*="bg-white\/5"]  { background-color: rgba(24, 24, 27, 0.03) !important; }
+.light [class*="bg-white\/10"] { background-color: rgba(24, 24, 27, 0.05) !important; }
+.light [class*="bg-white\/20"] { background-color: rgba(24, 24, 27, 0.08) !important; }
 
 /* ── Light: bg-black/* (dark surfaces → white surfaces) ── */
 .light [class*="bg-black\/40"] { background-color: rgba(255, 255, 255, 0.9) !important; }
 .light [class*="bg-black\/60"] { background-color: rgba(255, 255, 255, 0.95) !important; }
 .light [class*="bg-black\/80"] { background-color: #ffffff !important; }
 
-/* ── Light: border-white/* ── */
-.light [class*="border-white\/5"]  { border-color: rgba(0, 0, 0, 0.05) !important; }
-.light [class*="border-white\/10"] { border-color: rgba(0, 0, 0, 0.08) !important; }
-.light [class*="border-white\/20"] { border-color: rgba(0, 0, 0, 0.12) !important; }
-.light [class*="border-white\/30"] { border-color: rgba(0, 0, 0, 0.15) !important; }
+/* ── Light: border-white/* → zinc borders ── */
+.light [class*="border-white\/5"]  { border-color: #f4f4f5 !important; }
+.light [class*="border-white\/10"] { border-color: #e4e4e7 !important; }
+.light [class*="border-white\/20"] { border-color: #d4d4d8 !important; }
+.light [class*="border-white\/30"] { border-color: #a1a1aa !important; }
 
 /* ── Light: placeholder colours ── */
 .light ::placeholder { color: rgba(17, 24, 39, 0.35) !important; }
@@ -122,51 +122,121 @@
 /* ── Light: Experience section expand panel ── */
 .light [class*="border-white\/5"] { border-color: rgba(0,0,0,0.06) !important; }
 
-/* ── Light: skill / tag badges ── */
-.light [class*="bg-secondary\/10"] { background-color: rgba(8, 145, 178, 0.1) !important; }
+/* ── Light: skill / tag badges (ink tones) ── */
+.light [class*="bg-secondary\/10"] { background-color: rgba(26, 26, 26, 0.05) !important; }
 .light [class*="bg-secondary\/10"] [class*="text-white"],
-.light [class*="bg-secondary\/10"] span { 
-  color: var(--color-secondary) !important; 
+.light [class*="bg-secondary\/10"] span {
+  color: var(--color-text-muted) !important;
 }
-.light [class*="bg-primary\/10"]  { background-color: rgba(124, 58, 237, 0.08) !important; }
+.light [class*="bg-primary\/10"]  { background-color: rgba(26, 26, 26, 0.05) !important; }
 .light [class*="bg-primary\/10"] [class*="text-white"],
 .light [class*="bg-primary\/10"] span {
-  color: var(--color-primary) !important;
+  color: var(--color-text-main) !important;
 }
-.light [class*="border-secondary\/20"] { border-color: rgba(8, 145, 178, 0.25) !important; }
-.light [class*="border-primary\/20"] { border-color: rgba(124, 58, 237, 0.2) !important; }
+.light [class*="border-secondary\/20"] { border-color: rgba(26, 26, 26, 0.15) !important; }
+.light [class*="border-primary\/20"] { border-color: rgba(26, 26, 26, 0.12) !important; }
+
+/* ── Light: inline skill badge (inline style overrides) ── */
+.light #skills span[style*="rgba(255,255,255"] {
+  background: #f0ede8 !important;
+  border-color: #ddd9d0 !important;
+  color: #52525b !important;
+}
+.light #skills span[style*="rgba(255,255,255"]:hover {
+  color: #1a1a1a !important;
+  border-color: #a1a1aa !important;
+}
+
+/* ── .skill-icon-badge ── */
+.skill-icon-badge {
+  background: color-mix(in srgb, var(--accent, #8b5cf6) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent, #8b5cf6) 20%, transparent);
+}
+.light .skill-icon-badge {
+  background: #e8e5df !important;
+  border-color: #ddd9d0 !important;
+  color: #52525b !important;
+}
+/* ── .skill-accent-stripe — monochrome in light mode ── */
+.light .skill-accent-stripe {
+  background: #1a1a1a !important;
+  opacity: 0.15;
+}
+
+/* ── .skill-tag utility (theme-aware) ── */
+.skill-tag {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--color-text-muted);
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  transition: color 0.15s, border-color 0.15s;
+}
+.skill-tag:hover {
+  color: var(--color-text-main);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.light .skill-tag {
+  background: #f0ede8 !important;
+  border-color: #ddd9d0 !important;
+  color: #52525b !important;
+}
+.light .skill-tag:hover {
+  color: #1a1a1a !important;
+  border-color: #a1a1aa !important;
+  background: #e8e5df !important;
+}
 
 /* ── Light: footer ── */
-.light footer { border-color: rgba(0, 0, 0, 0.08) !important; color: var(--color-text-muted); }
+.light footer { border-color: #e4e4e7 !important; color: var(--color-text-muted); }
 
-/* Keep Contact and Chatbot cards dark/premium even in light mode */
-.light #contact .glass-card,
+/* ── Light: Newsreader serif for headings ── */
+.light h1, .light h2, .light h3, .light h4 {
+  font-family: 'Newsreader', ui-serif, Georgia, serif !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.03em !important;
+}
+
+/* ── Light: body bg matches paper ── */
+.light body { background-color: #f2f0eb; }
+
+/* ── Light: paper grain overlay ── */
+.light .paper-grain-overlay::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.022;
+}
+
+/* Keep Chatbot dark/premium even in light mode */
 .light #chatbot .glass-card {
   background: rgba(15, 15, 17, 0.95) !important;
   border-color: rgba(124, 58, 237, 0.3) !important;
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3) !important;
 }
-.light #contact .glass-card [class*="text-white"],
 .light #chatbot .glass-card [class*="text-white"],
-.light #contact .glass-card label,
 .light #chatbot .glass-card h3 {
   color: #ffffff !important;
 }
-.light #contact .glass-card p,
 .light #chatbot .glass-card p {
   color: rgba(255, 255, 255, 0.6) !important;
 }
-.light #contact .glass-card input,
-.light #contact .glass-card textarea {
-  background: rgba(0, 0, 0, 0.4) !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
-  color: #ffffff !important;
-}
-.light #contact .glass-card input::placeholder,
-.light #contact .glass-card textarea::placeholder,
 .light #chatbot .glass-card input::placeholder {
   color: rgba(255, 255, 255, 0.4) !important;
 }
+
+/* Contact section — light mode paper styling */
+.light .contact-input {
+  background: #ebe8e2 !important;
+  border-color: #ddd9d0 !important;
+  color: #1a1a1a !important;
+}
+.light .contact-input::placeholder { color: #9ca3af !important; }
+.light .contact-input:focus { border-color: #1a1a1a !important; box-shadow: 0 0 0 2px rgba(26, 26, 26, 0.08) !important; }
 
 /* Navbar specific overrides */
 .light nav a {
@@ -178,9 +248,9 @@
 .light nav a[class*="text-white"]:not([class*="bg-primary"]):not([class*="bg-gradient"]):hover {
   color: var(--color-text-main) !important;
 }
-/* Active state pill in light mode */
+/* Active state pill in light mode — zinc tint */
 .light nav [layoutId="navbar-active"] {
-  background: rgba(124, 58, 237, 0.12) !important;
+  background: rgba(24, 24, 27, 0.07) !important;
 }
 .light nav a.text-white:not([class*="bg-primary"]) {
   color: var(--color-primary) !important;
@@ -188,13 +258,70 @@
 
 /* ── Light: button outline ── */
 .light .btn-outline {
-  color: var(--color-primary) !important;
-  border-color: rgba(124, 58, 237, 0.35) !important;
+  color: var(--color-text-main) !important;
+  border-color: rgba(26, 26, 26, 0.25) !important;
 }
 .light .btn-outline:hover {
-  background: rgba(124, 58, 237, 0.06) !important;
-  border-color: rgba(124, 58, 237, 0.6) !important;
+  background: rgba(26, 26, 26, 0.05) !important;
+  border-color: rgba(26, 26, 26, 0.55) !important;
 }
+
+/* ── Light: btn-primary → solid ink button ── */
+.light .btn-primary {
+  background: #1a1a1a !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18) !important;
+}
+.light .btn-primary:hover {
+  background: #3f3f46 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22) !important;
+  opacity: 1 !important;
+}
+
+/* ── Light: text-gradient → flat ink (no purple/cyan) ── */
+.light .text-gradient {
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #1a1a1a !important;
+  color: #1a1a1a !important;
+}
+
+/* ── Light: wavy curly underline for UX Showcase link ── */
+.wavy-link {
+  text-decoration: underline wavy;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+}
+.light .wavy-link {
+  text-decoration-color: #1a1a1a;
+}
+
+/* ── Light: gradient buttons → solid ink ── */
+.light [class*="bg-gradient-to-r"][class*="from-primary"] {
+  background: #1a1a1a !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.18) !important;
+}
+.light [class*="shadow-primary"] { box-shadow: 0 1px 4px rgba(0,0,0,0.15) !important; }
+
+/* ── Light: FAB buttons (floating actions) ── */
+.light .fab-btn {
+  background: #ffffff !important;
+  border-color: #ddd9d0 !important;
+  color: #3f3f46 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+.light .fab-btn:hover {
+  color: #1a1a1a !important;
+  border-color: #a1a1aa !important;
+}
+.light .fab-ask-ai {
+  background: #1a1a1a !important;
+  border-color: #1a1a1a !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25) !important;
+}
+
+/* ── Light: body background ── */
+.light body { background-color: #f2f0eb; }
 
 /* ─── Semantic component classes (theme-aware) ────────────────────────────── */
 
@@ -331,6 +458,12 @@
   .btn-outline:hover {
     border-color: rgba(255, 255, 255, 0.5);
     background: rgba(255, 255, 255, 0.05);
+  }
+
+  /* ── Paper textures (light mode) ─────────────────────────────────────── */
+  .dot-grid {
+    background-image: radial-gradient(#e4e4e7 0.75px, transparent 0.75px);
+    background-size: 24px 24px;
   }
 
   /* ── Layout ───────────────────────────────────────────────────────────── */

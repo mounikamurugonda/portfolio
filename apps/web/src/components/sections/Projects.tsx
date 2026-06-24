@@ -4,7 +4,7 @@ import { SectionWrapper } from '../ui/SectionWrapper';
 import { GlassCard } from '../ui/GlassCard';
 import { fadeInUp } from '../../lib/animations';
 
-const CLOUD_STORY_URL = 'https://63f02208--65e9f78a-f673-44b6-b8ee-abe85b38b80b.lovable.app';
+const CLOUD_STORY_URL = 'https://mounika-murugonda.lovable.app';
 
 const featuredProject = {
   title: 'Cloud Story Showcase – UX Case Study Portfolio',

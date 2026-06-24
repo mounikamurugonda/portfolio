@@ -41,7 +41,7 @@ const experiences: ExperienceGroup[] = [
         bullets: [
           'Sole UX designer and frontend architect: owned the full design lifecycle from stakeholder wireframes and interactive Figma prototypes (using FigJam AI and Claude for rapid ideation) through pixel-perfect React delivery; published a Storybook component library documenting the ShadCN/Radix design system and standardized design-to-code handoff across micro-frontend teams.',
           'Built AI-powered interfaces including Multimodal RAG applications and LLM integrations (data ingestion, embedding, retrieval, prompt orchestration); leveraged Claude Code and GitHub Copilot to cut unit test generation time by 60% and accelerate feature prototyping by 25%.',
-          'Architected Nx Monorepo + Micro-Frontend (Module Federation) platform with React 18, TypeScript, Tailwind CSS; built D3.js visualizations (1,000+ nodes), AG Grid Enterprise grids, and reduced bundle size by 30% via code splitting and lazy loading.',
+          'Architected Nx Monorepo + Micro-Frontend (Module Federation) platform with React 18, TypeScript, Tailwind CSS; built D3.js interactive graph visualizations, AG Grid Enterprise grids, and reduced bundle size by 30% via code splitting and lazy loading.',
         ],
         tags: ['React 18', 'TypeScript', 'Nx Monorepo', 'Micro-Frontend', 'Figma', 'FigJam AI', 'Claude Code', 'GitHub Copilot', 'Vite', 'Tailwind CSS', 'ShadCN UI', 'Radix UI', 'Zustand', 'TanStack Query', 'Azure MSAL', 'D3.js', 'AG Grid Enterprise', 'Storybook', 'Playwright', 'Vitest', 'Multimodal RAG'],
       },

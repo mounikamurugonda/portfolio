@@ -30,28 +30,34 @@ export const Hero: React.FC = () => {
   }, []);
 
   return (
-    <SectionWrapper id="home" className="pt-32 pb-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <SectionWrapper id="home" className="pt-32 pb-16 relative overflow-hidden">
+      {/* Dot-grid background */}
+      <div className="absolute inset-0 dot-grid opacity-60 pointer-events-none" />
+
+      <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <motion.div variants={fadeInUp} className="flex flex-col items-start gap-6">
-          <span className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 border border-primary/20 text-primary">
-            Available for new opportunities
-          </span>
-          
-          <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              Hi, I'm <span className="text-gradient">Mounika</span>
+
+          {/* Editorial index label */}
+          <div className="flex items-center gap-3">
+            <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-text-muted">01 / Portfolio · 2026</span>
+            <div className="h-px w-8 bg-primary/40" />
+          </div>
+
+          <div className="space-y-3">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.9]">
+              Hi, I'm<br />
+              <span className="text-gradient">Mounika</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl text-text-muted font-medium flex items-center gap-2 h-10">
-              I build with 
-              <span className="text-white font-bold inline-block min-w-[120px]">
+            <div className="flex items-center gap-2 text-xl md:text-2xl text-text-muted font-medium h-9 overflow-hidden">
+              <span>I build with</span>
+              <span className="text-text-main font-bold inline-block min-w-[140px]">
                 {SKILLS.map((skill, index) => (
                   <motion.span
                     key={skill}
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ 
+                    animate={{
                       opacity: currentSkill === index ? 1 : 0,
                       y: currentSkill === index ? 0 : -20,
-                      position: currentSkill === index ? 'relative' : 'absolute' 
                     }}
                     transition={{ duration: 0.3 }}
                     className={currentSkill === index ? 'inline-block' : 'hidden'}
@@ -60,18 +66,23 @@ export const Hero: React.FC = () => {
                   </motion.span>
                 ))}
               </span>
-            </h2>
+            </div>
           </div>
 
-          <p className="text-base md:text-lg font-medium text-white/90">
-            Senior Frontend Developer · Frontend Architect · React, Angular · Design Systems · 13+ Years
-          </p>
+          {/* Role chips */}
+          <div className="flex flex-wrap gap-2">
+            {['Senior Frontend UI Engineer', 'UX Designer', 'AI-Native', '13+ Years'].map(tag => (
+              <span key={tag} className="text-xs font-medium px-3 py-1 rounded-full bg-white/5 border border-white/10 text-text-muted">
+                {tag}
+              </span>
+            ))}
+          </div>
 
           <p className="text-lg text-text-muted max-w-lg leading-relaxed">
-            Crafting premium digital experiences through elegant code, thoughtful design, and a touch of AI.
+            Crafting premium digital experiences through elegant code, thoughtful UX design, and a touch of AI.
           </p>
 
-          <div className="flex items-center gap-3 pt-1">
+          <div className="flex items-center gap-3">
             {SOCIAL_LINKS.map((social) => (
               <a
                 key={social.name}
@@ -79,7 +90,7 @@ export const Hero: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.name}
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-text-muted hover:text-white hover:border-primary/50 hover:bg-white/10 transition-all"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-text-muted hover:text-primary hover:border-primary/40 hover:bg-primary/5 transition-all"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                   <path d={social.path} />
@@ -88,36 +99,61 @@ export const Hero: React.FC = () => {
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center gap-4 pt-4">
+          <div className="flex flex-wrap items-center gap-3 pt-2">
             <NeonButton variant="primary" onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}>
               View My Work
             </NeonButton>
             <NeonButton variant="outline" onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}>
               Get In Touch
             </NeonButton>
-            <button 
-              onClick={() => document.querySelector('#chatbot')?.scrollIntoView({ behavior: 'smooth' })}
-              className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-primary/90 to-secondary/90 text-white font-medium hover:from-primary hover:to-secondary transition-all group shadow-lg shadow-primary/10 force-white"
-            >
-              <svg className="w-5 h-5 text-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2l2.09 6.41L21 10l-6.91 1.59L12 18l-2.09-6.41L3 10l6.91-1.59z" />
-              </svg>
-              <span className="force-white">Ask AI</span>
-            </button>
           </div>
         </motion.div>
 
-        <motion.div 
+        {/* Right: editorial card stack */}
+        <motion.div
           variants={fadeInUp}
-          className="relative hidden lg:flex justify-center items-center h-[500px]"
+          className="relative hidden lg:flex justify-center items-center h-[480px]"
         >
-          <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-full blur-3xl opacity-50 animate-glow" />
-          <div className="relative w-80 h-80 rounded-full border border-white/10 flex items-center justify-center">
-            <div className="w-64 h-64 rounded-full border border-white/20 flex items-center justify-center animate-[spin_20s_linear_infinite]">
-              <div className="w-10 h-10 bg-primary/80 rounded-full absolute -top-5 blur-sm" />
+          {/* Glow blob */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-primary/15 to-secondary/15 rounded-[3rem] blur-3xl opacity-60" />
+
+          {/* Card stack */}
+          <div className="relative flex flex-col gap-4 w-72">
+            {/* Stats card */}
+            <div className="glass-card rounded-2xl p-5 border border-white/10 shadow-xl">
+              <div className="grid grid-cols-3 gap-4 text-center">
+                {[['13+', 'Years'], ['20+', 'Projects'], ['5+', 'Domains']].map(([num, label]) => (
+                  <div key={label}>
+                    <div className="text-2xl font-bold text-gradient">{num}</div>
+                    <div className="text-xs text-text-muted mt-0.5">{label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="absolute inset-0 m-auto w-32 h-32 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-[0_0_50px_rgba(139,92,246,0.5)]">
-              <span className="text-4xl text-white font-bold force-white">M</span>
+
+            {/* Current role card */}
+            <div className="glass-card rounded-2xl p-5 border border-primary/20 shadow-xl">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="relative flex w-2.5 h-2.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-60" />
+                  <span className="relative inline-flex w-2.5 h-2.5 rounded-full bg-green-500" />
+                </span>
+                <span className="text-xs font-semibold text-green-500 uppercase tracking-widest">Currently</span>
+              </div>
+              <p className="text-sm font-semibold text-text-main mb-0.5">Senior Frontend UI Engineer</p>
+              <p className="text-xs text-text-muted">Complyia · XIT Solutions · Oct 2024–Present</p>
+            </div>
+
+            {/* Tech stack card */}
+            <div className="glass-card rounded-2xl p-5 border border-white/10 shadow-xl">
+              <p className="text-xs font-semibold tracking-widest uppercase text-text-muted mb-3">Core Stack</p>
+              <div className="flex flex-wrap gap-1.5">
+                {['React', 'TypeScript', 'Figma', 'Nx', 'Claude Code', 'RAG'].map(t => (
+                  <span key={t} className="text-xs px-2.5 py-1 rounded-md bg-primary/10 border border-primary/20 text-primary font-medium">
+                    {t}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>

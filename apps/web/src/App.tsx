@@ -15,7 +15,7 @@ function App() {
   useLenis();
 
   return (
-    <main className="bg-background min-h-screen text-text-main overflow-x-hidden selection:bg-primary/30">
+    <main className="paper-grain-overlay bg-background min-h-screen text-text-main overflow-x-hidden selection:bg-primary/30">
       <ScrollProgress />
       <Navbar />
       <FloatingActions />
@@ -28,7 +28,7 @@ function App() {
       <Hobbies />
       <Contact />
 
-      <footer className="py-8 text-center text-text-muted border-t border-white/10 mt-20">
+      <footer className="py-8 text-center text-text-muted border-t border-white/10 mt-20 transition-colors">
         <p>© {new Date().getFullYear()} Mounika. Crafted with ❤️ using React, TypeScript, Tailwind CSS, Framer Motion, and Sarvam AI.</p>
       </footer>
     </main>

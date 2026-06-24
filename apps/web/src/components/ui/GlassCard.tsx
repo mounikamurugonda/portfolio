@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { type ReactNode } from 'react'
+import React, { type ReactNode } from 'react'
 
 interface GlassCardProps {
   children: ReactNode
@@ -7,9 +7,10 @@ interface GlassCardProps {
   glow?: 'violet' | 'cyan' | 'none'
   glowColor?: string
   onClick?: () => void
+  style?: React.CSSProperties
 }
 
-export function GlassCard({ children, className = '', glow = 'violet', glowColor, onClick }: GlassCardProps) {
+export function GlassCard({ children, className = '', glow = 'violet', glowColor, onClick, style }: GlassCardProps) {
   const glowStyle = glowColor
     ? glowColor
     : glow === 'violet'
@@ -28,7 +29,7 @@ export function GlassCard({ children, className = '', glow = 'violet', glowColor
         y: -4,
       }}
       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-      style={{ cursor: onClick ? 'pointer' : 'default' }}
+      style={{ cursor: onClick ? 'pointer' : 'default', ...style }}
     >
       {children}
     </motion.div>
