@@ -4,6 +4,19 @@ import { SectionWrapper } from '../ui/SectionWrapper';
 import { GlassCard } from '../ui/GlassCard';
 import { fadeInUp } from '../../lib/animations';
 
+const CLOUD_STORY_URL = 'https://63f02208--65e9f78a-f673-44b6-b8ee-abe85b38b80b.lovable.app';
+
+const featuredProject = {
+  title: 'Cloud Story Showcase – UX Case Study Portfolio',
+  description: 'A dedicated UX case study portfolio built to showcase end-to-end product design thinking — from discovery and user research through wireframes, Figma prototypes, and pixel-perfect delivery. Features the C-Cloud compliance platform case study with annotated design decisions, interaction flows, and design system documentation.',
+  url: CLOUD_STORY_URL,
+  label: 'View UX Portfolio',
+  tags: ['UX Research', 'Figma', 'Interaction Design', 'Design Systems', 'Prototyping', 'Case Study', 'TanStack', 'Tailwind CSS'],
+  badge: 'UX Case Study Portfolio · Live',
+  gradient: 'from-sky-500/20 to-cyan-500/10',
+  accent: 'border-sky-400/40',
+};
+
 const projects = [
   {
     title: 'Complyia – Enterprise Compliance Platform',
@@ -45,6 +58,39 @@ export const Projects: React.FC = () => {
         <p className="text-text-muted text-lg max-w-2xl">
           Selected works — from enterprise platforms to personal tools built and shipped.
         </p>
+      </motion.div>
+
+      {/* Featured UX Showcase — full-width hero card */}
+      <motion.div variants={fadeInUp} className="mb-8">
+        <GlassCard className={`flex flex-col md:flex-row items-start md:items-center gap-6 p-0 group overflow-hidden border ${featuredProject.accent} hover:border-sky-400/70 transition-all duration-300`}>
+          <div className={`hidden md:block self-stretch w-2 shrink-0 bg-gradient-to-b ${featuredProject.gradient} opacity-80`} />
+          <div className="flex flex-col flex-1 p-6 md:py-7">
+            <div className="flex flex-wrap items-center gap-3 mb-3">
+              <span className="text-xs font-semibold px-3 py-1 rounded-full bg-sky-400/10 border border-sky-400/30 text-sky-300 backdrop-blur-sm">
+                {featuredProject.badge}
+              </span>
+              <span className="text-xs text-white/30 uppercase tracking-widest">Featured</span>
+            </div>
+            <h3 className="text-xl font-bold text-white mb-2 leading-snug">{featuredProject.title}</h3>
+            <p className="text-text-muted text-sm leading-relaxed mb-4 max-w-3xl">{featuredProject.description}</p>
+            <div className="flex flex-wrap gap-1.5 mb-5">
+              {featuredProject.tags.map(tag => (
+                <span key={tag} className="text-xs px-2 py-0.5 bg-white/5 border border-white/10 rounded-md text-white/60">{tag}</span>
+              ))}
+            </div>
+            <a
+              href={featuredProject.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-sky-400 hover:text-white transition-colors group/link w-fit"
+            >
+              <span>{featuredProject.label}</span>
+              <svg className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </GlassCard>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

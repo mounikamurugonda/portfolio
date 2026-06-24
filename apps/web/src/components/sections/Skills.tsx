@@ -6,6 +6,15 @@ import { fadeInUp } from '../../lib/animations';
 
 const skillCategories = [
   {
+    title: 'UX & Product Design',
+    icon: '✏️',
+    color: 'rgba(251, 191, 36, 0.15)',
+    skills: [
+      'UX Research', 'User Flows', 'Interaction Design', 'Wireframing', 'Prototyping',
+      'Usability Testing', 'Design Systems', 'Design-to-Code', 'Visual QA', 'Figma', 'FigJam AI', 'Adobe XD', 'Photoshop',
+    ],
+  },
+  {
     title: 'Frontend',
     icon: '🌐',
     color: 'rgba(234, 179, 8, 0.15)',
@@ -29,7 +38,7 @@ const skillCategories = [
     color: 'rgba(139, 92, 246, 0.2)',
     skills: [
       'Multimodal RAG Applications', 'LLM Integration', 'LLM Function Calling',
-      'Cursor', 'Copilot', 'AI-Assisted Development',
+      'Claude Code & Design', 'Cursor', 'GitHub Copilot', 'Figma Make', 'v0', 'AI-Assisted Development',
     ],
   },
   {
@@ -37,8 +46,7 @@ const skillCategories = [
     icon: '🎨',
     color: 'rgba(236, 72, 153, 0.15)',
     skills: [
-      'Figma', 'Adobe XD', 'Photoshop', 'Tailwind CSS', 'ShadCN UI',
-      'Radix UI', 'MUI', 'Angular Material', 'Bootstrap', 'Design Systems',
+      'Tailwind CSS', 'ShadCN UI', 'Radix UI', 'MUI', 'Angular Material', 'Bootstrap', 'Design Systems',
     ],
   },
   {
