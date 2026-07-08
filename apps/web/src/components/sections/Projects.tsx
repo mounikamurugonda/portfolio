@@ -8,7 +8,7 @@ const CLOUD_STORY_URL = 'https://mounika-murugonda.lovable.app';
 
 const featuredProject = {
   title: 'Cloud Story Showcase – UX Case Study Portfolio',
-  description: 'A dedicated UX case study portfolio built to showcase end-to-end product design thinking — from discovery and user research through wireframes, Figma prototypes, and pixel-perfect delivery. Features the C-Cloud compliance platform case study with annotated design decisions, interaction flows, and design system documentation.',
+  description: 'A dedicated UX case study portfolio built to showcase end-to-end product design thinking, from discovery and user research through wireframes, Figma prototypes, and pixel-perfect delivery. Features the C-Cloud compliance platform case study with annotated design decisions, interaction flows, and design system documentation.',
   url: CLOUD_STORY_URL,
   label: 'View UX Portfolio',
   tags: ['UX Research', 'Figma', 'Interaction Design', 'Design Systems', 'Prototyping', 'Case Study', 'TanStack', 'Tailwind CSS'],
@@ -30,7 +30,7 @@ const projects = [
   },
   {
     title: 'UtilToolkits – Free Developer Toolbox',
-    description: 'Built and launched a comprehensive suite of 95+ free browser-based developer utilities — JSON to TypeScript, Code to Image, SQL Formatter, Cron Generator, CSS tools, and more. All tools run 100% client-side with no data sent to servers. Used by thousands of developers worldwide.',
+    description: 'Built and launched a comprehensive suite of 95+ free browser-based developer utilities: JSON to TypeScript, Code to Image, SQL Formatter, Cron Generator, CSS tools, and more. All tools run 100% client-side with no data sent to servers. Used by thousands of developers worldwide.',
     url: 'https://utiltoolkits.com',
     label: 'utiltoolkits.com',
     tags: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Vercel', 'SEO', 'Client-Side Processing'],
@@ -40,7 +40,7 @@ const projects = [
   },
   {
     title: 'AI Portfolio – RAG Chatbot Experience',
-    description: 'Designed and built this interactive portfolio from scratch — featuring a RAG-powered AI chatbot that answers questions about my experience using Sarvam AI (LLM) and Supabase vector search. Includes orbital skill visualization, Framer Motion animations, smooth scrolling, and a dark glassmorphism design system.',
+    description: 'Designed and built this interactive portfolio from scratch, featuring a RAG-powered AI chatbot that answers questions about my experience using Sarvam AI (LLM) and Supabase vector search. Includes orbital skill visualization, Framer Motion animations, smooth scrolling, and a dark glassmorphism design system.',
     url: '#',
     label: 'You\'re looking at it!',
     tags: ['React', 'TypeScript', 'Vite', 'Framer Motion', 'Node.js', 'LangChain', 'Sarvam AI', 'Supabase', 'pgvector'],
@@ -56,11 +56,11 @@ export const Projects: React.FC = () => {
       <motion.div variants={fadeInUp} className="mb-12">
         <h2 className="text-3xl md:text-5xl font-bold mb-6">Featured Projects</h2>
         <p className="text-text-muted text-lg max-w-2xl">
-          Selected works — from enterprise platforms to personal tools built and shipped.
+          Selected works, from enterprise platforms to personal tools built and shipped.
         </p>
       </motion.div>
 
-      {/* Featured UX Showcase — full-width hero card */}
+      {/* Featured UX Showcase: full-width hero card */}
       <motion.div variants={fadeInUp} className="mb-8">
         <GlassCard className={`flex flex-col md:flex-row items-start md:items-center gap-6 p-0 group overflow-hidden border ${featuredProject.accent} hover:border-sky-400/70 transition-all duration-300`}>
           <div className={`hidden md:block self-stretch w-2 shrink-0 bg-gradient-to-b ${featuredProject.gradient} opacity-80`} />

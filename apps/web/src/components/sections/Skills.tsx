@@ -146,7 +146,7 @@ export const Skills: React.FC = () => {
         <div className="w-12 h-px bg-gradient-to-r from-primary to-secondary mb-8" />
         <h2 className="text-3xl md:text-5xl font-bold mb-4">Technical Arsenal</h2>
         <p className="text-text-muted max-w-xl text-lg">
-          13+ years of hands-on expertise — from UX research and Figma prototypes to cloud deployments.
+          13+ years of hands-on expertise, from UX research and Figma prototypes to cloud deployments.
         </p>
       </motion.div>
 
@@ -158,7 +158,7 @@ export const Skills: React.FC = () => {
               <GlassCard
                 className="h-full p-6 transition-all duration-200 group overflow-hidden relative"
               >
-                {/* Left accent stripe — absolute div, bypasses border-color !important */}
+                {/* Left accent stripe: absolute div, bypasses border-color !important */}
                 <div
                   className="absolute left-0 top-0 bottom-0 w-[3px] rounded-l-2xl skill-accent-stripe"
                   style={{ background: category.accent }}

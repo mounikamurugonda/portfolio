@@ -1,5 +1,5 @@
 /**
- * Local duotone icon library — Phosphor-compatible API.
+ * Local duotone icon library with a Phosphor-compatible API.
  * weight="duotone" renders a secondary filled layer at 20% opacity.
  */
 import React from 'react';

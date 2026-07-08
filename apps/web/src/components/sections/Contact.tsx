@@ -58,7 +58,7 @@ export const Contact: React.FC = () => {
               Have a project in mind or just want to chat? I'm always open to new opportunities and collaborations.
             </p>
 
-            {/* Availability badge — editorial minimal style */}
+            {/* Availability badge, editorial minimal style */}
             <div className="flex items-center gap-2.5 w-fit">
               <motion.span
                 className="w-1.5 h-1.5 rounded-full bg-text-main opacity-70"
@@ -100,7 +100,7 @@ export const Contact: React.FC = () => {
 
             {/* Decorative quote */}
             <blockquote className="mt-4 pl-4 border-l-2 border-primary/30 text-text-muted text-sm italic leading-relaxed max-w-xs">
-              "Good design is as little design as possible — but great engineering makes it invisible."
+              "Good design is as little design as possible, but great engineering makes it invisible."
             </blockquote>
           </motion.div>
 
@@ -110,7 +110,7 @@ export const Contact: React.FC = () => {
               <div className="text-center py-20 px-8 bg-white/5 border border-white/10 rounded-2xl">
                 <div className="w-14 h-14 bg-green-500/15 text-green-500 rounded-full flex items-center justify-center mx-auto mb-5 text-2xl">✓</div>
                 <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
-                <p className="text-text-muted mb-6">Thanks for reaching out — I'll get back to you shortly.</p>
+                <p className="text-text-muted mb-6">Thanks for reaching out! I'll get back to you shortly.</p>
                 <button onClick={() => setStatus('idle')} className="text-sm text-primary hover:text-primary-hover transition-colors underline underline-offset-4">
                   Send another message
                 </button>
@@ -155,7 +155,7 @@ export const Contact: React.FC = () => {
 
                 {status === 'error' && (
                   <p className="text-red-400 text-sm flex items-center gap-2">
-                    <span>⚠</span> Failed to send — please try again or email directly.
+                    <span>⚠</span> Failed to send. Please try again or email directly.
                   </p>
                 )}
 

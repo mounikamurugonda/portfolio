@@ -97,7 +97,7 @@ export const FloatingActions: React.FC = () => {
         </AnimatePresence>
       </motion.button>
 
-      {/* Ask AI — branded FAB */}
+      {/* Ask AI branded FAB */}
       <div className="relative">
         {chatPulse && (
           <span className={`absolute inset-0 rounded-full animate-ping ${theme === 'light' ? 'bg-zinc-400/30' : 'bg-white/20'}`} />

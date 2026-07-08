@@ -37,7 +37,7 @@ const experiences: ExperienceGroup[] = [
         project: 'Complyia – Enterprise Compliance Platform',
         projectUrl: 'https://www.google.com/search?q=Complyia+compliance+management+platform',
         period: 'Oct 2024 – Present',
-        summary: 'Enterprise compliance and tax-provision platform (C-Cloud) for regulatory tracking, reporting, and documentation. Served as sole UX designer and frontend architect — owning the full product surface from Figma wireframes and interactive prototypes through pixel-perfect React delivery within an Nx Monorepo and Micro-Frontend architecture.',
+        summary: 'Enterprise compliance and tax-provision platform (C-Cloud) for regulatory tracking, reporting, and documentation. Served as sole UX designer and frontend architect, owning the full product surface from Figma wireframes and interactive prototypes through pixel-perfect React delivery within an Nx Monorepo and Micro-Frontend architecture.',
         bullets: [
           'Sole UX designer and frontend architect: owned the full design lifecycle from stakeholder wireframes and interactive Figma prototypes (using FigJam AI and Claude for rapid ideation) through pixel-perfect React delivery; published a Storybook component library documenting the ShadCN/Radix design system and standardized design-to-code handoff across micro-frontend teams.',
           'Built AI-powered interfaces including Multimodal RAG applications and LLM integrations (data ingestion, embedding, retrieval, prompt orchestration); leveraged Claude Code and GitHub Copilot to cut unit test generation time by 60% and accelerate feature prototyping by 25%.',
@@ -59,9 +59,9 @@ const experiences: ExperienceGroup[] = [
         project: 'Cloud for Tax & Entity Operations – Enterprise Tax Suite',
         projectUrl: 'https://www.google.com/search?q=PwC+Cloud+for+Tax+platform',
         period: 'Feb 2023 – Jan 2024',
-        summary: 'PwC Cloud for Tax is a unified enterprise platform combining tax capabilities — Applications, Analytics, Data Management, Task Management, Entity Management, and Document Management. Entity Operations manages legal entity compliance, data tracking, and document workflows for multinational clients.',
+        summary: 'PwC Cloud for Tax is a unified enterprise platform combining tax capabilities: Applications, Analytics, Data Management, Task Management, Entity Management, and Document Management. Entity Operations manages legal entity compliance, data tracking, and document workflows for multinational clients.',
         bullets: [
-          'Led frontend development of Cloud for Tax using React, Next.js, TypeScript, and Power Apps Component Framework (PCF) — built scalable dashboards, Power Pages portals, Power BI analytics, and reusable components with SSR/SSG and Dataverse integration; executed Figma-to-code workflow within PwC\'s design system with pixel-perfect fidelity.',
+          'Led frontend development of Cloud for Tax using React, Next.js, TypeScript, and Power Apps Component Framework (PCF); built scalable dashboards, Power Pages portals, Power BI analytics, and reusable components with SSR/SSG and Dataverse integration; executed Figma-to-code workflow within PwC\'s design system with pixel-perfect fidelity.',
           'Engineered Entity Operations full-stack REST APIs (Node.js, Express, Prisma) and responsive React UIs with Redux state management and yFiles interactive org-chart visualizations for legal entity lifecycle management.',
           'Deployed via Docker on Azure with Cypress E2E test coverage; applied Next.js performance optimizations (code splitting, ISR, image optimization) for real-time business insights across both platforms.',
         ],
@@ -131,7 +131,7 @@ const experiences: ExperienceGroup[] = [
         project: 'TransPortal – IC-DISC & Transfer Pricing Platform',
         projectUrl: 'https://www.google.com/search?q=WTP+Advisors+TransPortal+IC-DISC+transfer+pricing',
         period: 'Mar 2016 – Mar 2017',
-        summary: 'WTP Advisors is a leader in international tax, transfer pricing, and IC-DISC technology. TransPortal (internally MPS — Modernized Processing System) is their flagship high-performance web application modernizing the ingestion and processing of transactional invoice data for real-time tax optimization and automated report generation for multinational clients.',
+        summary: 'WTP Advisors is a leader in international tax, transfer pricing, and IC-DISC technology. TransPortal (internally MPS, the Modernized Processing System) is their flagship high-performance web application modernizing the ingestion and processing of transactional invoice data for real-time tax optimization and automated report generation for multinational clients.',
         bullets: [
           'Designed and developed responsive, pixel-perfect web interfaces transforming design mockups into W3C-compliant, SEO-optimized, cross-browser compatible applications.',
           'Implemented interactive UI elements, animations, and reusable components to enhance user experience across the tax optimization platform.',

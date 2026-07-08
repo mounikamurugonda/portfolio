@@ -82,7 +82,7 @@ export const Navbar: React.FC = () => {
 
           <div className="w-px h-6 bg-white/20 mx-1 sm:mx-2 hidden sm:block"></div>
 
-          {/* Cloud Story Showcase — external UX portfolio link with curly underline */}
+          {/* Cloud Story Showcase: external UX portfolio link with curly underline */}
           <a
             href={CLOUD_STORY_URL}
             target="_blank"

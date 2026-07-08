@@ -157,7 +157,7 @@
   border-color: #ddd9d0 !important;
   color: #52525b !important;
 }
-/* ── .skill-accent-stripe — monochrome in light mode ── */
+/* ── .skill-accent-stripe: monochrome in light mode ── */
 .light .skill-accent-stripe {
   background: #1a1a1a !important;
   opacity: 0.15;
@@ -223,13 +223,37 @@
   color: #ffffff !important;
 }
 .light #chatbot .glass-card p {
-  color: rgba(255, 255, 255, 0.6) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 .light #chatbot .glass-card input::placeholder {
-  color: rgba(255, 255, 255, 0.4) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+/* Input: undo the global `.light input` dark text (the card stays dark) */
+.light #chatbot .chat-input {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  color: #ffffff !important;
+  caret-color: #ffffff;
+}
+.light #chatbot .chat-input:focus {
+  border-color: rgba(139, 92, 246, 0.6) !important;
+}
+/* Keep the brand purple inside the dark card (light mode remaps
+   --color-primary to ink, which vanishes on the dark background) */
+.light #chatbot .bg-primary { background-color: #8b5cf6 !important; }
+.light #chatbot .text-primary { color: #a78bfa !important; }
+.light #chatbot [class*="from-primary"] {
+  background: linear-gradient(to top right, #8b5cf6, #06b6d4) !important;
+}
+.light #chatbot [class*="border-white\/10"] { border-color: rgba(255, 255, 255, 0.1) !important; }
+.light #chatbot .border-surface { border-color: #0f0f11 !important; }
+.light #chatbot .chat-ai-bubble {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: rgba(255, 255, 255, 0.92) !important;
 }
 
-/* Contact section — light mode paper styling */
+/* Contact section: light mode paper styling */
 .light .contact-input {
   background: #ebe8e2 !important;
   border-color: #ddd9d0 !important;
@@ -248,7 +272,7 @@
 .light nav a[class*="text-white"]:not([class*="bg-primary"]):not([class*="bg-gradient"]):hover {
   color: var(--color-text-main) !important;
 }
-/* Active state pill in light mode — zinc tint */
+/* Active state pill in light mode: zinc tint */
 .light nav [layoutId="navbar-active"] {
   background: rgba(24, 24, 27, 0.07) !important;
 }
@@ -325,7 +349,7 @@
 
 /* ─── Semantic component classes (theme-aware) ────────────────────────────── */
 
-/* AI message bubble — dark default */
+/* AI message bubble (dark default) */
 .chat-ai-bubble {
   background: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.9);
@@ -333,18 +357,19 @@
   backdrop-filter: blur(4px);
 }
 
-/* Chat input — dark default */
+/* Chat input (dark default) */
 .chat-input {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: #ffffff;
+  caret-color: #ffffff;
 }
-.chat-input::placeholder { color: rgba(255, 255, 255, 0.2); }
+.chat-input::placeholder { color: rgba(255, 255, 255, 0.45); }
 
 .force-white { color: #ffffff !important; }
 .force-white-muted { color: rgba(255, 255, 255, 0.7) !important; }
 
-/* Status dot border — uses surface token */
+/* Status dot border uses the surface token */
 .border-surface { border-color: var(--color-surface) !important; }
 
 
