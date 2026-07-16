@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { CaretDown } from '@phosphor-icons/react';
 import { SectionWrapper } from '../ui/SectionWrapper';
 import { fadeInUp } from '../../lib/animations';
 
@@ -37,13 +38,15 @@ const experiences: ExperienceGroup[] = [
         project: 'Complyia – Enterprise Compliance Platform',
         projectUrl: 'https://www.google.com/search?q=Complyia+compliance+management+platform',
         period: 'Oct 2024 – Present',
-        summary: 'Enterprise compliance and tax-provision platform (C-Cloud) for regulatory tracking, reporting, and documentation. Served as sole UX designer and frontend architect, owning the full product surface from Figma wireframes and interactive prototypes through pixel-perfect React delivery within an Nx Monorepo and Micro-Frontend architecture.',
+        summary: 'Enterprise compliance platform for regulatory tracking, reporting, and documentation. Architected and led frontend development using Nx Monorepo and Micro-Frontend architecture (Module Federation), enabling scalable, independently deployable applications. Built AI-powered interfaces with Multimodal RAG and LLM integration, while driving state management, reusable component systems, and reducing bundle size by 30%.',
         bullets: [
-          'Sole UX designer and frontend architect: owned the full design lifecycle from stakeholder wireframes and interactive Figma prototypes (using FigJam AI and Claude for rapid ideation) through pixel-perfect React delivery; published a Storybook component library documenting the ShadCN/Radix design system and standardized design-to-code handoff across micro-frontend teams.',
-          'Built AI-powered interfaces including Multimodal RAG applications and LLM integrations (data ingestion, embedding, retrieval, prompt orchestration); leveraged Claude Code and GitHub Copilot to cut unit test generation time by 60% and accelerate feature prototyping by 25%.',
-          'Architected Nx Monorepo + Micro-Frontend (Module Federation) platform with React 18, TypeScript, Tailwind CSS; built D3.js interactive graph visualizations, AG Grid Enterprise grids, and reduced bundle size by 30% via code splitting and lazy loading.',
+          'Led frontend architecture and development of a large-scale enterprise platform using Nx monorepo, Micro-Frontend architecture, and Module Federation, enabling scalable, independently deployable applications and streamlined team collaboration.',
+          'Designed and implemented AI-powered frontend systems — Multimodal RAG applications and LLM integrations covering end-to-end RAG workflows (data ingestion, embedding, retrieval, prompt orchestration, response handling) — and applied LLM function calling patterns for structured, dynamic AI interactions.',
+          'Developed scalable, high-performance UIs with React 18, TypeScript, Tailwind CSS, WCAG standards, ShadCN UI, and Radix UI, creating reusable component libraries and enterprise design systems; implemented advanced client/global/server state management with Zustand, TanStack Query, and Context API.',
+          'Integrated secure authentication and authorization with Azure MSAL for role-based, enterprise-grade security workflows; reduced bundle size by 30% via code splitting, lazy loading, and efficient caching.',
+          'Leveraged AI-assisted development (Claude, GitHub Copilot) to cut unit test generation time by 60% and accelerate feature prototyping by 25%; provided technical leadership and mentorship, driving frontend best practices and code quality across teams.',
         ],
-        tags: ['React 18', 'TypeScript', 'Nx Monorepo', 'Micro-Frontend', 'Figma', 'FigJam AI', 'Claude Code', 'GitHub Copilot', 'Vite', 'Tailwind CSS', 'ShadCN UI', 'Radix UI', 'Zustand', 'TanStack Query', 'Azure MSAL', 'D3.js', 'AG Grid Enterprise', 'Storybook', 'Playwright', 'Vitest', 'Multimodal RAG'],
+        tags: ['Nx Workspace', 'Micro-Frontends', 'React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'ShadCN UI', 'Radix UI', 'AG Grid Enterprise', 'Zustand', 'TanStack Query', 'Azure MSAL', 'Docusaurus', 'Playwright', 'Vitest', 'Jest', 'Storybook', 'Zod', 'React Hook Form', 'Claude AI', 'GitHub Copilot', 'Multimodal RAG'],
       },
     ],
   },
@@ -56,16 +59,30 @@ const experiences: ExperienceGroup[] = [
       {
         role: 'Senior Frontend Developer',
         client: 'PwC',
-        project: 'Cloud for Tax & Entity Operations – Enterprise Tax Suite',
+        project: 'Cloud for Tax – Enterprise Tax Compliance Platform',
         projectUrl: 'https://www.google.com/search?q=PwC+Cloud+for+Tax+platform',
-        period: 'Feb 2023 – Jan 2024',
-        summary: 'PwC Cloud for Tax is a unified enterprise platform combining tax capabilities: Applications, Analytics, Data Management, Task Management, Entity Management, and Document Management. Entity Operations manages legal entity compliance, data tracking, and document workflows for multinational clients.',
+        period: 'July 2023 – Jan 2024',
+        summary: 'Enterprise tax compliance platform built with React.js, Next.js, TypeScript, and Power Apps Component Framework (PCF). Architected scalable dashboards, reusable UI components, and Power Pages portals with SSR/SSG, Power BI visualizations, and Dataverse integration for high-performance tax workflows.',
         bullets: [
-          'Led frontend development of Cloud for Tax using React, Next.js, TypeScript, and Power Apps Component Framework (PCF); built scalable dashboards, Power Pages portals, Power BI analytics, and reusable components with SSR/SSG and Dataverse integration; executed Figma-to-code workflow within PwC\'s design system with pixel-perfect fidelity.',
-          'Engineered Entity Operations full-stack REST APIs (Node.js, Express, Prisma) and responsive React UIs with Redux state management and yFiles interactive org-chart visualizations for legal entity lifecycle management.',
-          'Deployed via Docker on Azure with Cypress E2E test coverage; applied Next.js performance optimizations (code splitting, ISR, image optimization) for real-time business insights across both platforms.',
+          'Led development of enterprise web applications and Power Pages portals using React.js, Next.js, TypeScript, and PCF, leveraging SSR, SSG, API routes, and optimized routing while building custom web templates, reusable components, and advanced dashboards.',
+          'Designed and implemented custom PCF controls, Next.js modular architectures, React Data Grid integrations, and reusable form components; managed Dataverse data modeling, Liquid template integrations, and REST API communication with Axios.',
+          'Developed interactive dashboards and analytics with Power BI, Tailwind CSS, Redux, and modern React hooks, applying Next.js performance optimizations (code splitting, image optimization, ISR) for real-time business insights.',
         ],
-        tags: ['React', 'Next.js', 'TypeScript', 'Figma', 'Power Pages', 'Power Apps', 'PCF', 'Power BI', 'Tailwind CSS', 'Redux', 'Dataverse', 'Node.js', 'Express.js', 'Prisma', 'yFiles', 'Docker', 'Azure', 'Cypress'],
+        tags: ['React.js', 'Next.js', 'TypeScript', 'JavaScript', 'HTML', 'CSS3', 'Tailwind CSS', 'Bootstrap', 'Power Pages', 'Power Apps', 'Power BI', 'PCF', 'Dataverse', 'yFiles'],
+      },
+      {
+        role: 'Full Stack Developer',
+        client: 'PwC',
+        project: 'Entity Operations – Legal Entity Management',
+        projectUrl: 'https://www.google.com/search?q=PwC+entity+operations+legal+entity+management',
+        period: 'Feb 2023 – July 2023',
+        summary: 'Legal entity management application with scalable REST APIs built on Node.js, Express, and Prisma, plus responsive React.js UIs with Redux state management and yFiles data visualizations, deployed via Docker and Azure with Cypress test coverage.',
+        bullets: [
+          'Developed and maintained scalable RESTful APIs using Node.js, Express, and Prisma, implementing structured architecture, validation, and standardized error handling.',
+          'Built responsive React.js UIs with Redux state management and yFiles data visualizations for enterprise reliability.',
+          'Collaborated across teams and supported deployment workflows using Docker and Azure, ensuring reliable integration, performance, and environment consistency.',
+        ],
+        tags: ['Node.js', 'Express.js', 'React.js', 'JavaScript', 'Prisma', 'Docker', 'Redux', 'yFiles', 'Cypress', 'Agile', 'Azure'],
       },
       {
         role: 'Senior Frontend Developer',
@@ -76,8 +93,8 @@ const experiences: ExperienceGroup[] = [
         summary: 'Membership-based enterprise web platform serving healthcare finance professionals with tools for financial insights, reporting, and member engagement across the healthcare industry.',
         bullets: [
           'Designed scalable Angular applications with role-based authentication (Guards, Interceptors), modular architecture, and client-side routing for accessible, high-performance UIs.',
-          'Built pixel-perfect, mobile-first interfaces with HTML5, SCSS, WCAG compliance, and Bootstrap; integrated RESTful APIs for dynamic dashboards and real-time data rendering.',
-          'Reduced load time by 40% through performance optimization; ensured quality with Cypress unit and E2E testing in Agile/Scrum environments.',
+          'Built pixel-perfect, mobile-first interfaces with HTML5, SCSS, WCAG compliance, and Bootstrap; integrated RESTful APIs for dynamic dashboards, reporting features, and real-time data rendering while solving complex UI challenges including hierarchical data structures and conditional role-based views.',
+          'Reduced load time by 40% through performance optimization; ensured reliability and quality with Cypress unit and E2E testing in Agile/Scrum environments, enhancing usability and accessibility compliance.',
         ],
         tags: ['Angular 12', 'TypeScript', 'RxJS', 'NgRx', 'HTML5', 'SCSS', 'CSS3', 'Bootstrap', 'REST APIs', 'Cypress', 'WCAG', 'Agile'],
       },
@@ -108,25 +125,25 @@ const experiences: ExperienceGroup[] = [
   {
     id: 4,
     company: 'XIT Solutions Pvt. Ltd.',
-    period: 'Mar 2016 – Mar 2018',
+    period: 'Jan 2015 – Mar 2018',
     location: 'Hyderabad, Telangana, India · On-site',
     engagements: [
       {
-        role: 'UI Developer',
+        role: 'UI/UX Developer',
         client: 'Deloitte',
         project: 'Section 987 – Tax Compliance Portal',
         projectUrl: 'https://www.google.com/search?q=Deloitte+Section+987+tax+compliance+portal',
         period: 'Mar 2017 – Mar 2018',
         summary: 'Centralized, data-driven application helping multinational corporations calculate, track, and visualize complex foreign currency gains/losses and IRC Section 987 transition computations.',
         bullets: [
-          'Designed responsive, intuitive dashboards to visualize complex tax models with dynamic UI components, interactive D3.js graphs, and data-heavy grids.',
+          'Designed responsive, intuitive dashboards to visualize complex tax models with dynamic, reusable UI components, interactive Highcharts graphs, and data-heavy grids.',
           'Collaborated with tax SMEs, business analysts, and backend developers to translate Section 987 requirements into accessible web applications.',
           'Ensured WCAG compliance, cross-browser compatibility, and high-performance rendering for large financial datasets.',
         ],
-        tags: ['Angular', 'JavaScript', 'D3.js', 'HTML5', 'CSS3', 'Bootstrap', 'WCAG', 'Jira'],
+        tags: ['Angular', 'JavaScript', 'Highcharts', 'HTML5', 'CSS3', 'Bootstrap', 'WCAG', 'Jira', 'Visual Studio Code'],
       },
       {
-        role: 'UI Developer',
+        role: 'UI/UX Developer',
         client: 'WTP Advisors',
         project: 'TransPortal – IC-DISC & Transfer Pricing Platform',
         projectUrl: 'https://www.google.com/search?q=WTP+Advisors+TransPortal+IC-DISC+transfer+pricing',
@@ -138,6 +155,20 @@ const experiences: ExperienceGroup[] = [
           'Collaborated with business analysts, project managers, and developers to deliver user-centric web applications ensuring performance, accessibility, and browser compatibility.',
         ],
         tags: ['Angular JS', 'HTML5', 'CSS3', 'Bootstrap', 'JavaScript', 'SEO', 'WCAG', 'Jira', 'Visual Studio Code'],
+      },
+      {
+        role: 'UI/UX Developer',
+        client: 'PCC Technology Inc',
+        project: 'Business Services – Government Services Platform',
+        projectUrl: 'https://www.google.com/search?q=PCC+Technology+business+services+government+platform',
+        period: 'Jan 2015 – Mar 2016',
+        summary: 'Government business services platform. Translated wireframes into responsive web interfaces using HTML, CSS, JavaScript, and jQuery, building reusable, high-fidelity UI components integrated with backend systems across enterprise workflows.',
+        bullets: [
+          'Designed high-fidelity UI mockups, wireframes, and interactive prototypes using Photoshop, collaborating directly with clients and business stakeholders to translate requirements into intuitive, user-centric designs.',
+          'Converted approved designs into pixel-perfect, responsive web interfaces using HTML, CSS, Bootstrap, and JavaScript, ensuring cross-browser compatibility.',
+          'Diagnosed and resolved UI defects, layout inconsistencies, and usability issues while building interactive UI components and reusable frontend modules, improving usability and visual consistency.',
+        ],
+        tags: ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'jQuery', 'Photoshop', 'Adobe Dreamweaver'],
       },
     ],
   },
@@ -291,12 +322,11 @@ export const Experience: React.FC = () => {
                     {group.period}
                   </div>
                   {!group.alwaysOpen && (
-                    <svg
-                      className={`w-4 h-4 text-white/40 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
-                      fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
+                    <CaretDown
+                      size={16}
+                      weight="bold"
+                      className={`text-white/40 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                    />
                   )}
                 </div>
               </button>

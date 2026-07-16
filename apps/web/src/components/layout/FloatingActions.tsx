@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUp, Sun, Moon, Sparkle } from '../ui/Icons';
+import { ArrowUp, Sun, Moon, Sparkle } from '@phosphor-icons/react';
 
 export const FloatingActions: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);

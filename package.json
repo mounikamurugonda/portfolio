@@ -6,6 +6,8 @@
   ],
   "scripts": {
     "dev": "npm run dev --workspace=apps/web",
+    "dev:ux": "npm run dev --prefix apps/ux-showcase",
+    "build:ux": "npm run build --prefix apps/ux-showcase",
     "build": "npm run build --workspace=apps/web",
     "lint": "npm run lint --workspace=apps/web",
     "supabase:login": "npx supabase login",

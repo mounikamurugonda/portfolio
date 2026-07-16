@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Sparkle, PaperPlaneRight } from '@phosphor-icons/react';
 import { SectionWrapper } from '../ui/SectionWrapper';
 import { GlassCard } from '../ui/GlassCard';
 import { fadeInUp } from '../../lib/animations';
@@ -103,9 +104,7 @@ export const Chatbot: React.FC = () => {
             <div className="flex items-center gap-3 pb-4 border-b border-white/10 mb-4 px-2 bg-black/5 -mx-4 px-6 pt-2">
               <div className="relative">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white shadow-lg shadow-primary/20">
-                  <svg className="w-6 h-6 force-white" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2l2.09 6.41L21 10l-6.91 1.59L12 18l-2.09-6.41L3 10l6.91-1.59z" />
-                  </svg>
+                  <Sparkle size={24} weight="fill" className="force-white" />
                 </div>
                 <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-surface" />
               </div>
@@ -168,9 +167,7 @@ export const Chatbot: React.FC = () => {
                 disabled={isLoading || !input.trim()}
                 className="absolute right-1 top-[9px] bottom-1 w-10 h-10 flex items-center justify-center text-primary hover:text-white transition-colors disabled:opacity-50"
               >
-                <svg className="w-5 h-5 transform rotate-90" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
-                </svg>
+                <PaperPlaneRight size={20} weight="fill" />
               </button>
             </form>
           </GlassCard>

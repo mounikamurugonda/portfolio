@@ -1,31 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-  PaintBrush, Code, Blueprint, Brain, Palette, StackSimple,
+  Code, Blueprint, Brain, Palette, StackSimple,
   Key, Wrench, ShoppingCart, Flask, Hammer, Cloud, ChartBar, ArrowsClockwise,
-} from '../ui/Icons';
+  type Icon,
+} from '@phosphor-icons/react';
 import { SectionWrapper } from '../ui/SectionWrapper';
 import { GlassCard } from '../ui/GlassCard';
 import { fadeInUp } from '../../lib/animations';
 
-type PhosphorIconComponent = React.ComponentType<{ size?: number; weight?: 'thin' | 'light' | 'regular' | 'bold' | 'fill' | 'duotone'; color?: string }>;
-
 const skillCategories: {
   title: string;
-  icon: PhosphorIconComponent;
+  icon: Icon;
   accent: string;
   skills: string[];
 }[] = [
-  {
-    title: 'UX & Product Design',
-    icon: PaintBrush,
-    accent: '#f59e0b',
-    skills: [
-      'UX Research', 'User Flows', 'Interaction Design', 'Wireframing', 'Prototyping',
-      'Usability Testing', 'Design Systems', 'Design-to-Code', 'Visual QA',
-      'Figma', 'FigJam AI', 'Adobe XD', 'Photoshop',
-    ],
-  },
   {
     title: 'Frontend',
     icon: Code,
@@ -50,7 +39,7 @@ const skillCategories: {
     accent: '#8b5cf6',
     skills: [
       'Multimodal RAG Applications', 'LLM Integration', 'LLM Function Calling',
-      'Claude Code & Design', 'Cursor', 'GitHub Copilot', 'Figma Make', 'v0', 'AI-Assisted Development',
+      'Claude', 'GitHub Copilot', 'AI-Assisted Development',
     ],
   },
   {
@@ -58,7 +47,7 @@ const skillCategories: {
     icon: Palette,
     accent: '#ec4899',
     skills: [
-      'Tailwind CSS', 'ShadCN UI', 'Radix UI', 'MUI', 'Angular Material', 'Bootstrap', 'Design Systems',
+      'Figma', 'Photoshop', 'Tailwind CSS', 'ShadCN UI', 'Radix UI', 'MUI', 'Angular Material', 'Bootstrap', 'Design Systems',
     ],
   },
   {
@@ -109,7 +98,7 @@ const skillCategories: {
     accent: '#06b6d4',
     skills: [
       'VS Code', 'Nx', 'Vite', 'Webpack', 'Babel', 'Storybook',
-      'Git', 'GitHub', 'Git Extensions', 'Jira', 'CI/CD', 'Docker',
+      'Git', 'GitHub', 'Git Extensions', 'CI/CD', 'Docker',
     ],
   },
   {
@@ -133,8 +122,7 @@ const skillCategories: {
     icon: ArrowsClockwise,
     accent: '#f59e0b',
     skills: [
-      'Agile', 'Scrum', 'Component-Driven Development', 'TDD', 'WCAG 2.1 AA',
-      'Architecture Decision Records (ADRs)', 'Code Reviews', 'Mentorship',
+      'Agile', 'Scrum', 'Component-Driven Development', 'TDD',
     ],
   },
 ];
@@ -146,7 +134,7 @@ export const Skills: React.FC = () => {
         <div className="w-12 h-px bg-gradient-to-r from-primary to-secondary mb-8" />
         <h2 className="text-3xl md:text-5xl font-bold mb-4">Technical Arsenal</h2>
         <p className="text-text-muted max-w-xl text-lg">
-          13+ years of hands-on expertise, from UX research and Figma prototypes to cloud deployments.
+          13+ years of hands-on frontend expertise — from pixel-perfect UI and modern frameworks to micro-frontend architecture, AI-powered interfaces, and cloud deployments.
         </p>
       </motion.div>
 

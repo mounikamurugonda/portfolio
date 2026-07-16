@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { ArrowSquareOut } from '@phosphor-icons/react';
+
+// UX Showcase app lives in apps/ux-showcase. Dev: local server; prod: deployed URL
+// (override with VITE_UX_SHOWCASE_URL once the new deployment exists).
+const UX_SHOWCASE_URL =
+  import.meta.env.VITE_UX_SHOWCASE_URL ??
+  (import.meta.env.DEV ? 'http://localhost:8080' : 'https://mounika-murugonda.lovable.app');
 
 const navItems = [
   { name: 'Home', href: '#home' },
   { name: 'Skills', href: '#skills' },
   { name: 'Experience', href: '#experience' },
   { name: 'Projects', href: '#projects' },
+  { name: 'Education', href: '#education' },
   { name: 'Hobbies', href: '#hobbies' },
 ];
-
-const CLOUD_STORY_URL = 'https://mounika-murugonda.lovable.app';
 
 export const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -84,15 +90,13 @@ export const Navbar: React.FC = () => {
 
           {/* Cloud Story Showcase: external UX portfolio link with curly underline */}
           <a
-            href={CLOUD_STORY_URL}
+            href={UX_SHOWCASE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="wavy-link hidden sm:flex items-center gap-1.5 px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium text-white/60 hover:text-white/90 transition-colors"
           >
             <span>UX Showcase</span>
-            <svg className="w-3 h-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
+            <ArrowSquareOut size={12} className="opacity-60" />
           </a>
 
           <div className="w-px h-6 bg-white/20 mx-1 sm:mx-2 hidden sm:block"></div>
