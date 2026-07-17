@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowSquareOut } from '@phosphor-icons/react';
-
-// UX Showcase app lives in apps/ux-showcase. Dev: local server; prod: deployed URL
-// (override with VITE_UX_SHOWCASE_URL once the new deployment exists).
-const UX_SHOWCASE_URL =
-  import.meta.env.VITE_UX_SHOWCASE_URL ??
-  (import.meta.env.DEV ? 'http://localhost:8080' : 'https://mounika-murugonda.lovable.app');
 
 const navItems = [
   { name: 'Home', href: '#home' },
@@ -85,19 +78,6 @@ export const Navbar: React.FC = () => {
               </a>
             );
           })}
-
-          <div className="w-px h-6 bg-white/20 mx-1 sm:mx-2 hidden sm:block"></div>
-
-          {/* Cloud Story Showcase: external UX portfolio link with curly underline */}
-          <a
-            href={UX_SHOWCASE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="wavy-link hidden sm:flex items-center gap-1.5 px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium text-white/60 hover:text-white/90 transition-colors"
-          >
-            <span>UX Showcase</span>
-            <ArrowSquareOut size={12} className="opacity-60" />
-          </a>
 
           <div className="w-px h-6 bg-white/20 mx-1 sm:mx-2 hidden sm:block"></div>
 
