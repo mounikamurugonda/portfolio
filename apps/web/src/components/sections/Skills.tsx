@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
   Code, Blueprint, Brain, Palette, StackSimple,
-  Key, Wrench, ShoppingCart, Flask, Hammer, Cloud, ChartBar, ArrowsClockwise,
+  Key, Wrench, Flask, Hammer, Cloud, ChartBar, ArrowsClockwise,
   type Icon,
 } from '@phosphor-icons/react';
 import { SectionWrapper } from '../ui/SectionWrapper';
@@ -21,7 +21,7 @@ const skillCategories: {
     accent: '#eab308',
     skills: [
       'HTML5', 'CSS3', 'SCSS/SASS', 'JavaScript (ES6+)', 'TypeScript', 'RxJS',
-      'Responsive Design', 'Pixel-Perfect UI', 'Cross-Browser Compatibility', 'WCAG', 'SEO',
+      'Responsive Design', 'Cross-Browser Compatibility', 'WCAG Accessibility', 'SEO',
     ],
   },
   {
@@ -29,7 +29,7 @@ const skillCategories: {
     icon: Blueprint,
     accent: '#10b981',
     skills: [
-      'React', 'React.js', 'Next.js (SSR/SSG/ISR)', 'Angular', 'AngularJS',
+      'React', 'React 18', 'Next.js (SSR/SSG/ISR)', 'Angular', 'AngularJS',
       'Micro-Frontends (Module Federation)', 'Nx Monorepo', 'TurboRepo',
     ],
   },
@@ -38,7 +38,7 @@ const skillCategories: {
     icon: Brain,
     accent: '#8b5cf6',
     skills: [
-      'Multimodal RAG Applications', 'LLM Integration', 'LLM Function Calling',
+      'RAG Application Integration', 'LLM Function Calling', 'AI-Assisted Workflows',
       'Claude', 'GitHub Copilot', 'AI-Assisted Development',
     ],
   },
@@ -47,7 +47,7 @@ const skillCategories: {
     icon: Palette,
     accent: '#ec4899',
     skills: [
-      'Figma', 'Photoshop', 'Tailwind CSS', 'ShadCN UI', 'Radix UI', 'MUI', 'Angular Material', 'Bootstrap', 'Design Systems',
+      'Figma', 'Tailwind CSS', 'ShadCN UI', 'Radix UI', 'MUI', 'Angular Material', 'Bootstrap', 'Design Systems', 'Storybook',
     ],
   },
   {
@@ -76,29 +76,21 @@ const skillCategories: {
     ],
   },
   {
-    title: 'CMS & E-commerce',
-    icon: ShoppingCart,
-    accent: '#d946ef',
-    skills: [
-      'WordPress', 'Shopify', 'AEM',
-    ],
-  },
-  {
-    title: 'Testing',
+    title: 'Testing & Quality',
     icon: Flask,
     accent: '#22c55e',
     skills: [
-      'Jest', 'Playwright', 'Vitest', 'Cypress', 'React Testing Library',
-      'Debugging', 'Chrome DevTools', 'Performance Optimization',
+      'Jest', 'Vitest', 'Playwright', 'Cypress', 'React Testing Library',
+      'ESLint', 'Prettier', 'Husky', 'Chrome DevTools',
     ],
   },
   {
-    title: 'Tools & Build',
+    title: 'CI/CD & Build',
     icon: Hammer,
     accent: '#06b6d4',
     skills: [
-      'VS Code', 'Nx', 'Vite', 'Webpack', 'Babel', 'Storybook',
-      'Git', 'GitHub', 'Git Extensions', 'CI/CD', 'Docker',
+      'Azure DevOps', 'Nx Affected Builds', 'Vite', 'Webpack',
+      'Docker', 'Git', 'GitHub',
     ],
   },
   {
@@ -106,7 +98,7 @@ const skillCategories: {
     icon: Cloud,
     accent: '#0ea5e9',
     skills: [
-      'Azure', 'AWS', 'Vercel', 'Netlify', 'Google Cloud Platform (GCP)',
+      'Azure', 'AWS', 'Vercel', 'Netlify',
     ],
   },
   {
@@ -114,7 +106,7 @@ const skillCategories: {
     icon: ChartBar,
     accent: '#f43f5e',
     skills: [
-      'D3.js', 'AG Grid', 'React Data Grid', 'yFiles',
+      'D3.js', 'Recharts', 'AG Grid', 'yFiles', 'Power BI', 'Highcharts',
     ],
   },
   {
@@ -122,7 +114,7 @@ const skillCategories: {
     icon: ArrowsClockwise,
     accent: '#f59e0b',
     skills: [
-      'Agile', 'Scrum', 'Component-Driven Development', 'TDD',
+      'Agile/Scrum', 'Component-Driven Development',
     ],
   },
 ];

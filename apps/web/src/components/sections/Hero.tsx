@@ -131,8 +131,8 @@ export const Hero: React.FC = () => {
                 </span>
                 <span className="text-xs font-semibold text-green-500 uppercase tracking-widest">Currently</span>
               </div>
-              <p className="text-sm font-semibold text-text-main mb-0.5">Senior Frontend UI Engineer</p>
-              <p className="text-xs text-text-muted">Complyia · XIT Solutions · Oct 2024–Present</p>
+              <p className="text-sm font-semibold text-text-main mb-0.5">Senior Frontend Engineer</p>
+              <p className="text-xs text-text-muted">Complyia · C-Cloud Platform · Oct 2024–Present</p>
             </div>
 
             {/* Tech stack card */}

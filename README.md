@@ -1,131 +1,165 @@
-# Mounika's AI Portfolio — Premium Developer Showcase
+# Mounika Murugonda — AI-Powered Portfolio (Frontend)
 
-This is a premium, AI-powered portfolio website for Mounika Murugonda, a Senior Frontend Developer. It features a RAG-based AI chatbot, interactive career timelines, and a modern glassmorphism design system.
+Personal portfolio of **Mounika Murugonda**, Senior Frontend Engineer (React · Angular · UI/UX · AI · Micro-Frontends · 13+ years).
 
-## 🚀 Tech Stack
+Live site: **[mounikamurugonda.vercel.app](https://mounikamurugonda.vercel.app)**
 
-- **Frontend:** React, TypeScript, Tailwind CSS, Framer Motion, Lenis (Smooth Scroll).
-- **Backend:** Node.js, Express, LangChain.
-- **AI/LLM:** Sarvam AI (`sarvam-m`), Supabase Vector Store (pgvector).
-- **Tooling:** Nx-style Monorepo, Vite, Resend (Email API).
+This repository contains the **frontend** (React + Vite). The AI chatbot backend (RAG API) lives in a separate repository: [`api-portfolio`](https://github.com/mounikamurugonda/api-portfolio).
+
+---
+
+## ✨ Features
+
+- **AI Twin chatbot** — a RAG-powered assistant that answers questions about Mounika's experience, backed by Supabase pgvector + Sarvam AI.
+- **Interactive experience timeline** — grouped engagements with expandable client projects.
+- **Design-system-driven UI** — glassmorphism cards, duotone Phosphor icons, Framer Motion animations, Lenis smooth scrolling.
+- **Contact form** — stores submissions in Supabase and triggers an email notification via Resend.
+- **Light/dark ink-and-paper theme** with WCAG-conscious contrast.
+
+## 🧱 Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | React 18, TypeScript, Vite |
+| Styling | Tailwind CSS 4, custom glassmorphism design system |
+| Animation | Framer Motion, Lenis (smooth scroll) |
+| Icons | Phosphor Icons (duotone) |
+| Data / AI | Supabase (contacts), RAG API (separate repo) |
+| Hosting | Vercel |
+
+## 🗺️ System Architecture
+
+```mermaid
+flowchart LR
+    subgraph Frontend["This repo — Vercel"]
+        UI["React SPA (apps/web)"]
+    end
+
+    subgraph Backend["api-portfolio repo — Vercel"]
+        API["Express API<br/>/api/chat · /api/contact"]
+        RAG["LangChain RAG<br/>Xenova MiniLM embeddings"]
+    end
+
+    subgraph Cloud["Managed services"]
+        SB[("Supabase<br/>pgvector + contacts")]
+        LLM["Sarvam AI (LLM)"]
+        MAIL["Resend (email)"]
+    end
+
+    UI -- "chat / contact requests" --> API
+    API --> RAG
+    RAG -- "similarity search" --> SB
+    RAG -- "prompt + context" --> LLM
+    API -- "store submission" --> SB
+    API -- "notify Mounika" --> MAIL
+```
 
 ## 📂 Project Structure
 
 ```text
+portfolio/
 ├── apps/
-│   ├── web/        # React/Vite frontend
-│   └── api/        # Node.js/Express backend + RAG scripts
-├── supabase/       # Database migrations & SQL schema
-└── package.json    # Monorepo orchestration
+│   └── web/                  # React + Vite frontend
+│       ├── index.html        # Entry HTML (SEO meta, fonts, analytics)
+│       └── src/
+│           ├── components/
+│           │   ├── layout/   # Navbar, ScrollProgress, FloatingActions
+│           │   ├── sections/ # Hero, Skills, Experience, Projects,
+│           │   │             # Education, Chatbot, Hobbies, Contact
+│           │   └── ui/       # GlassCard, NeonButton, SectionWrapper, ...
+│           ├── hooks/        # useLenis (smooth scroll)
+│           └── lib/          # animations, api client, supabase client
+├── supabase/
+│   └── migrations/           # SQL schema (contacts + documents/pgvector)
+└── package.json              # npm workspaces orchestration
 ```
 
 ## 🛠️ Prerequisites
 
-- **Node.js:** v18+ (v22 recommended)
-- **Supabase Account:** For vector storage and contact messages.
-- **Sarvam AI API Key:** For the AI twin's reasoning.
-- **Resend API Key:** For automated email notifications.
+- **Node.js** v18+ (v22 recommended)
+- A **Supabase** project (for the contact form; the same project also backs the RAG API)
+- The [`api-portfolio`](https://github.com/mounikamurugonda/api-portfolio) backend running locally or deployed (for the chatbot)
 
-## 📥 Getting Started
+## 🚀 Getting Started
 
-### 1. Clone the repository
+### 1. Clone and install
+
 ```bash
-git clone https://github.com/yourusername/portfolio.git
+git clone https://github.com/mounikamurugonda/portfolio.git
 cd portfolio
-```
-
-### 2. Install dependencies
-```bash
 npm install
 ```
 
-### 3. Setup Environment Variables
-Create `.env` files in both `apps/web` and `apps/api` directories.
+### 2. Configure environment variables
 
-**`apps/api/.env`**
-```env
-PORT=3000
-SARVAM_API_KEY=your_key
-SUPABASE_URL=your_supabase_url
-SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
-RESEND_API_KEY=your_resend_key
-```
+Create `apps/web/.env` (see `apps/web/.env.example`):
 
-**`apps/web/.env`**
 ```env
+# Backend API URL (local api-portfolio server)
 VITE_API_URL=http://localhost:3000/api
+
+# Supabase (contact form)
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your_anon_public_key
 ```
 
-### 4. Database Setup
-1. Create a new project in [Supabase](https://supabase.com).
-2. Enable the `pgvector` extension.
-3. Run the migrations found in `./supabase/migrations` to create the `documents` and `contacts` tables.
+> Only the **anon public** key belongs in the frontend. Never put the service-role key in a `VITE_` variable — anything prefixed `VITE_` is bundled into public JavaScript.
 
-### 5. Ingest Data (Train the AI)
-Populate the vector store with Mounika's professional context.
-```bash
-cd apps/api
-npm run ingest
-```
+### 3. Set up Supabase (one-time)
 
-### 6. Run Development Mode
-From the root directory:
+1. Create a project at [database.new](https://database.new).
+2. Enable the `vector` extension (Database → Extensions).
+3. Run the SQL in [`supabase/migrations/20240101000000_init.sql`](supabase/migrations/20240101000000_init.sql) in the SQL Editor. It creates:
+   - `contacts` — contact-form submissions (RLS enabled; written via the backend service key only)
+   - `documents` — pgvector store (384-dim embeddings for `all-MiniLM-L6-v2`)
+   - `match_documents()` — the similarity-search function used by LangChain
+
+### 4. Run the dev server
+
 ```bash
 npm run dev
 ```
-- **Frontend:** http://localhost:5173
-- **Backend:** http://localhost:3000
 
-## 🚀 Deployment
+The site runs at **http://localhost:5173**. For a working chatbot, also start the backend from the `api-portfolio` repo (`npm run dev`, port 3000).
 
-### Production Build
-1. Build both applications:
-   ```bash
-   npm run build  # Builds the web app
-   cd apps/api && npm run build  # Builds the API
-   ```
+## 🤖 How the AI chatbot works
 
-2. Set production environment variables:
-   - Update `apps/api/.env` with production URLs and keys.
-   - Update `apps/web/.env` with production API URL and Supabase keys.
+```mermaid
+sequenceDiagram
+    participant V as Visitor
+    participant W as React app (this repo)
+    participant A as api-portfolio (Express)
+    participant S as Supabase (pgvector)
+    participant L as Sarvam AI
 
-### Hosting Recommendations
-- **Frontend (Web):** Deploy `apps/web/dist` to Vercel, Netlify, or any static host.
-- **Backend (API):** Deploy to Railway, Render, or Heroku. Ensure Node.js 18+.
-- **Database:** Supabase (already configured).
-
-### Environment Variables for Production
-**API (.env):**
-```env
-PORT=3000
-SARVAM_API_KEY=your_production_key
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
-RESEND_API_KEY=your_resend_key
+    V->>W: Types a question
+    W->>A: POST /api/chat
+    A->>A: Embed question (Xenova MiniLM, local)
+    A->>S: match_documents(query_embedding)
+    S-->>A: Top-matching resume chunks
+    A->>L: Prompt = question + retrieved context
+    L-->>A: Grounded answer
+    A-->>W: JSON response
+    W-->>V: Rendered chat reply
 ```
 
-**Web (.env):**
-```env
-VITE_API_URL=https://your-api-domain.com/api
-VITE_SUPABASE_URL=https://your-project.supabase.co
-VITE_SUPABASE_ANON_KEY=your_anon_key
+The knowledge base is seeded from `scripts/seed-data.ts` in the `api-portfolio` repo — see its README for how to re-ingest after a resume update.
+
+## 📦 Build & Deployment
+
+```bash
+npm run build     # type-checks and builds apps/web → apps/web/dist
+npm run lint      # ESLint over the web app
 ```
 
-## 🤖 AI Persona & RAG
-The chatbot uses **Retrieval-Augmented Generation (RAG)**. 
-- Context is sourced from `apps/api/scripts/seed-data.ts`.
-- `ingest.ts` clears the database and re-embeds the latest context using the `Xenova/all-MiniLM-L6-v2` local embedding model.
-- The backend queries Supabase (pgvector) for relevant matches before calling Sarvam AI.
+- **Frontend:** deploy `apps/web` to Vercel (framework preset: Vite). Set `VITE_API_URL`, `VITE_SUPABASE_URL`, and `VITE_SUPABASE_ANON_KEY` in the Vercel project settings.
+- **Backend:** deployed separately from the `api-portfolio` repo.
 
-## ✉️ Contact System
-- Submissions are saved to the Supabase `contacts` table.
-- A background trigger sends a formatted email notification to Mounika using **Resend**.
+## 🛡️ Security notes
 
-## 🛡️ Security
-This repo is configured with a strict `.gitignore` to prevent leaking:
-- API Keys and secrets (`.env`)
-- Local build artifacts (`dist`, `node_modules`)
-- Raw resume files or private documents.
+- This repo is safe to keep **private or public**: no secrets are committed.
+- `.gitignore` excludes `.env*`, build artifacts (`dist/`, `node_modules/`), and raw resume files (`*.pdf`, `*.docx`).
+- The Supabase **service-role key exists only in the backend repo's environment**, never here.
 
 ---
 Built with ❤️ by Mounika Murugonda

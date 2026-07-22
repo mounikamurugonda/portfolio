@@ -23,20 +23,20 @@ interface EnterpriseProject {
 
 const enterpriseProjects: EnterpriseProject[] = [
   {
-    title: 'Complyia – Enterprise Compliance Platform',
+    title: 'C-Cloud – Enterprise Compliance & Tax-Provision Platform',
     domain: 'Compliance & Regulatory SaaS',
     client: 'Complyia · Oakbrook Terrace, IL',
-    role: 'Senior Frontend UI Engineer / Frontend Architect',
+    role: 'Senior Frontend Engineer / Sole Frontend Architect',
     period: 'Oct 2024 – Present',
     description:
-      'Large-scale enterprise compliance platform (C-Cloud) for regulatory tracking, reporting, and documentation. Architected and led frontend development on an Nx Monorepo with Micro-Frontend architecture (Module Federation), enabling scalable, independently deployable applications.',
+      'Enterprise compliance and tax-provision platform. Sole frontend architect owning the frontend end to end — architecture, build system, CI/CD, testing strategy, design system, and delivery — across an Nx monorepo with Micro-Frontend architecture (Module Federation) where 7 applications deploy independently.',
     responsibilities: [
-      'Led frontend architecture across an Nx Monorepo + Micro-Frontend (Module Federation) platform, streamlining multi-team collaboration and independent deployments.',
-      'Designed and built AI-powered interfaces: Multimodal RAG applications and LLM integrations covering ingestion, embedding, retrieval, prompt orchestration, and function calling.',
-      'Developed scalable, high-performance UIs with React 18, TypeScript, Tailwind CSS, WCAG standards, ShadCN UI, and Radix UI, creating reusable component libraries and enterprise design systems; implemented advanced state management with Zustand, TanStack Query, and Context API.',
-      'Reduced bundle size by 30% via code splitting and lazy loading; integrated Azure MSAL for role-based, enterprise-grade auth; leveraged AI-assisted development (Claude, GitHub Copilot) to cut unit test generation time by 60%; mentored teams on frontend best practices.',
+      'Integrated v1 of the platform\'s RAG application on the frontend: streaming chat UI, citation rendering, response handling, and LLM function-calling integration; built AI-integrated workflows in the Data Manager module.',
+      'Developed a shared design-system library of 55+ reusable components (47 core UI primitives plus 10 domain modules including org chart, data grid, PDF viewer, and virtual select), documented in Storybook and consumed across all 7 apps.',
+      'Built data-dense dashboards with D3.js, Recharts, and AG Grid Enterprise; layered state management with Zustand and TanStack Query; Azure MSAL authentication with role-based access control.',
+      'Own CI/CD in Azure DevOps with Nx affected-only builds and per-PR preview deployments; cut unit-test writing time by 60% with AI-assisted test generation; reduced bundle size by 30%; led and mentored a frontend team of ~6 engineers.',
     ],
-    environment: ['Nx Workspace', 'Micro-Frontends', 'React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'ShadCN UI', 'Radix UI', 'AG Grid Enterprise', 'Zustand', 'TanStack Query', 'Azure MSAL', 'Storybook', 'Playwright', 'Vitest', 'Jest', 'Multimodal RAG'],
+    environment: ['Nx Workspace', 'Micro-Frontends', 'React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'ShadCN UI', 'Radix UI', 'AG Grid Enterprise', 'D3.js', 'Recharts', 'Zustand', 'TanStack Query', 'Azure MSAL', 'Azure DevOps', 'Storybook', 'Playwright', 'Vitest', 'Jest', 'RAG/LLM Integration'],
     url: 'https://www.complyia.com',
     label: 'complyia.com',
     badge: 'Enterprise · Current',
