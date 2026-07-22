@@ -26,34 +26,7 @@ This repository contains the **frontend** (React + Vite). The AI chatbot backend
 | Icons | Phosphor Icons (duotone) |
 | Data / AI | Supabase (contacts), RAG API (separate repo) |
 | Hosting | Vercel |
-
-## 🗺️ System Architecture
-
-```mermaid
-flowchart LR
-    subgraph Frontend["This repo — Vercel"]
-        UI["React SPA (apps/web)"]
-    end
-
-    subgraph Backend["api-portfolio repo — Vercel"]
-        API["Express API<br/>/api/chat · /api/contact"]
-        RAG["LangChain RAG<br/>Xenova MiniLM embeddings"]
-    end
-
-    subgraph Cloud["Managed services"]
-        SB[("Supabase<br/>pgvector + contacts")]
-        LLM["Sarvam AI (LLM)"]
-        MAIL["Resend (email)"]
-    end
-
-    UI -- "chat / contact requests" --> API
-    API --> RAG
-    RAG -- "similarity search" --> SB
-    RAG -- "prompt + context" --> LLM
-    API -- "store submission" --> SB
-    API -- "notify Mounika" --> MAIL
-```
-
+ 
 ## 📂 Project Structure
 
 ```text
@@ -121,28 +94,7 @@ npm run dev
 ```
 
 The site runs at **http://localhost:5173**. For a working chatbot, also start the backend from the `api-portfolio` repo (`npm run dev`, port 3000).
-
-## 🤖 How the AI chatbot works
-
-```mermaid
-sequenceDiagram
-    participant V as Visitor
-    participant W as React app (this repo)
-    participant A as api-portfolio (Express)
-    participant S as Supabase (pgvector)
-    participant L as Sarvam AI
-
-    V->>W: Types a question
-    W->>A: POST /api/chat
-    A->>A: Embed question (Xenova MiniLM, local)
-    A->>S: match_documents(query_embedding)
-    S-->>A: Top-matching resume chunks
-    A->>L: Prompt = question + retrieved context
-    L-->>A: Grounded answer
-    A-->>W: JSON response
-    W-->>V: Rendered chat reply
-```
-
+ 
 The knowledge base is seeded from `scripts/seed-data.ts` in the `api-portfolio` repo — see its README for how to re-ingest after a resume update.
 
 ## 📦 Build & Deployment
