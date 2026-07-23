@@ -23,18 +23,18 @@ interface EnterpriseProject {
 
 const enterpriseProjects: EnterpriseProject[] = [
   {
-    title: 'C-Cloud – Enterprise Compliance & Tax-Provision Platform',
+    title: 'Complyia – Enterprise Compliance & Tax-Provision Platform',
     domain: 'Compliance & Regulatory SaaS',
     client: 'Complyia · Oakbrook Terrace, IL',
-    role: 'Senior Frontend Engineer / Sole Frontend Architect',
+    role: 'Senior Frontend Engineer',
     period: 'Oct 2024 – Present',
     description:
-      'Enterprise compliance and tax-provision platform. Sole frontend architect owning the frontend end to end — architecture, build system, CI/CD, testing strategy, design system, and delivery — across an Nx monorepo with Micro-Frontend architecture (Module Federation) where 7 applications deploy independently.',
+      'Enterprise compliance and tax-provision platform. Part of the frontend team, contributing across architecture, build system, CI/CD, testing strategy, design system, and delivery, built as an Nx monorepo with Micro-Frontend architecture (Module Federation) where 7 applications deploy independently.',
     responsibilities: [
       'Integrated v1 of the platform\'s RAG application on the frontend: streaming chat UI, citation rendering, response handling, and LLM function-calling integration; built AI-integrated workflows in the Data Manager module.',
       'Developed a shared design-system library of 55+ reusable components (47 core UI primitives plus 10 domain modules including org chart, data grid, PDF viewer, and virtual select), documented in Storybook and consumed across all 7 apps.',
       'Built data-dense dashboards with D3.js, Recharts, and AG Grid Enterprise; layered state management with Zustand and TanStack Query; Azure MSAL authentication with role-based access control.',
-      'Own CI/CD in Azure DevOps with Nx affected-only builds and per-PR preview deployments; cut unit-test writing time by 60% with AI-assisted test generation; reduced bundle size by 30%; led and mentored a frontend team of ~6 engineers.',
+      'Set up CI/CD in Azure DevOps with Nx affected-only builds and per-PR preview deployments; cut unit-test writing time by 60% with AI-assisted test generation; reduced bundle size by 30%; mentored engineers on React patterns and monorepo workflows.',
     ],
     environment: ['Nx Workspace', 'Micro-Frontends', 'React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'ShadCN UI', 'Radix UI', 'AG Grid Enterprise', 'D3.js', 'Recharts', 'Zustand', 'TanStack Query', 'Azure MSAL', 'Azure DevOps', 'Storybook', 'Playwright', 'Vitest', 'Jest', 'RAG/LLM Integration'],
     url: 'https://www.complyia.com',
@@ -71,7 +71,7 @@ const enterpriseProjects: EnterpriseProject[] = [
     role: 'Senior UI Developer',
     period: 'May 2018 – Jan 2020',
     description:
-      'Scalable SaaS visibility platform giving enterprises insight into organizational software usage — managing licenses, reducing shadow IT, and optimizing SaaS spend.',
+      'Scalable SaaS visibility platform giving enterprises insight into organizational software usage: managing licenses, reducing shadow IT, and optimizing SaaS spend.',
     responsibilities: [
       'Developed enterprise-scale Angular applications with reusable, modular UI components using Angular Material and custom theming for a consistent, responsive experience.',
       'Integrated RESTful APIs and backend services powering dynamic, data-driven interfaces.',
@@ -90,14 +90,14 @@ const enterpriseProjects: EnterpriseProject[] = [
 const personalProjects = [
   {
     title: 'UtilToolkits – Free Developer Toolbox',
-    description: '95+ free browser-based developer utilities (JSON to TypeScript, Code to Image, SQL Formatter, Cron Generator, and more). 100% client-side — no data leaves the browser.',
+    description: '95+ free browser-based developer utilities (JSON to TypeScript, Code to Image, SQL Formatter, Cron Generator, and more). 100% client-side, no data leaves the browser.',
     url: 'https://utiltoolkits.com',
     label: 'utiltoolkits.com',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel', 'SEO'],
   },
   {
     title: 'AI Portfolio – RAG Chatbot Experience',
-    description: 'This site — an interactive portfolio with a RAG-powered AI chatbot (Sarvam AI + Supabase vector search), orbital skill visualization, and a dark glassmorphism design system.',
+    description: 'This site: an interactive portfolio with a RAG-powered AI chatbot (Sarvam AI + Supabase vector search), orbital skill visualization, and a dark glassmorphism design system.',
     url: '#',
     label: "You're looking at it!",
     tags: ['React', 'Vite', 'Framer Motion', 'LangChain', 'Supabase', 'pgvector'],

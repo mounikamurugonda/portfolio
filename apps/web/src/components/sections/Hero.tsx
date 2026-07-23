@@ -72,7 +72,7 @@ export const Hero: React.FC = () => {
           </div>
 
           <p className="text-lg text-text-muted max-w-lg leading-relaxed">
-            Senior Frontend Engineer with 13+ years delivering scalable, high-performance, user-centric enterprise applications across healthcare, finance, compliance, and enterprise SaaS domains — from pixel-perfect UI to micro-frontend architecture and AI-powered interfaces.
+            Senior Frontend Engineer with 13+ years delivering scalable, high-performance, user-centric enterprise applications across healthcare, finance, compliance, and enterprise SaaS domains, from pixel-perfect UI to micro-frontend architecture and AI-powered interfaces.
           </p>
 
           <div className="flex items-center gap-3">
@@ -132,7 +132,7 @@ export const Hero: React.FC = () => {
                 <span className="text-xs font-semibold text-green-500 uppercase tracking-widest">Currently</span>
               </div>
               <p className="text-sm font-semibold text-text-main mb-0.5">Senior Frontend Engineer</p>
-              <p className="text-xs text-text-muted">Complyia · C-Cloud Platform · Oct 2024–Present</p>
+              <p className="text-xs text-text-muted">Complyia · Enterprise Compliance Platform · Oct 2024–Present</p>
             </div>
 
             {/* Tech stack card */}

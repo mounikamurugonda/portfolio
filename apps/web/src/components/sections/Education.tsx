@@ -17,7 +17,7 @@ const education = [
     title: 'Certification in Multimedia – Graphic & Web Design',
     institution: 'Arena Animations',
     year: '2012',
-    detail: 'Two-year professional certification covering graphic design and web design fundamentals — the foundation for a design-driven approach to frontend engineering.',
+    detail: 'Two-year professional certification covering graphic design and web design fundamentals, the foundation for a design-driven approach to frontend engineering.',
   },
 ];
 

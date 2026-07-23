@@ -126,7 +126,7 @@ export const Skills: React.FC = () => {
         <div className="w-12 h-px bg-gradient-to-r from-primary to-secondary mb-8" />
         <h2 className="text-3xl md:text-5xl font-bold mb-4">Technical Arsenal</h2>
         <p className="text-text-muted max-w-xl text-lg">
-          13+ years of hands-on frontend expertise — from pixel-perfect UI and modern frameworks to micro-frontend architecture, AI-powered interfaces, and cloud deployments.
+          13+ years of hands-on frontend expertise, from pixel-perfect UI and modern frameworks to micro-frontend architecture, AI-powered interfaces, and cloud deployments.
         </p>
       </motion.div>
 

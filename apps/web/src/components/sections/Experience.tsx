@@ -35,18 +35,18 @@ const experiences: ExperienceGroup[] = [
       {
         role: 'Senior Frontend Engineer',
         client: 'Complyia',
-        project: 'C-Cloud – Enterprise Compliance & Tax-Provision Platform',
+        project: 'Complyia – Enterprise Compliance & Tax-Provision Platform',
         projectUrl: 'https://www.google.com/search?q=Complyia+compliance+management+platform',
         period: 'Oct 2024 – Present',
-        summary: 'Sole frontend architect for C-Cloud, an enterprise compliance and tax-provision platform. Own the frontend end to end: architecture, build system, CI/CD, testing strategy, design system, and delivery across 7 independently deployable applications.',
+        summary: 'Enterprise compliance and tax-provision platform. Part of the frontend team, contributing across architecture, build system, CI/CD, testing strategy, design system, and delivery for 7 independently deployable applications.',
         bullets: [
-          'Architected the platform as an Nx monorepo with Micro-Frontend architecture (Module Federation), chosen over a single-build monolith so 7 applications deploy independently, removing cross-team release coordination.',
-          'Integrated v1 of the platform\'s RAG application on the frontend — streaming chat UI, citation rendering, response handling, and LLM function-calling integration — and built AI-integrated workflows in the Data Manager module, embedding LLM-driven features directly into user-facing data operations.',
+          'Contributed to architecting the platform as an Nx monorepo with Micro-Frontend architecture (Module Federation), chosen over a single-build monolith so 7 applications deploy independently, removing cross-team release coordination.',
+          'Integrated v1 of the platform\'s RAG application on the frontend (streaming chat UI, citation rendering, response handling, and LLM function-calling integration) and built AI-integrated workflows in the Data Manager module, embedding LLM-driven features directly into user-facing data operations.',
           'Developed a shared design-system library of 55+ reusable components (47 core UI primitives and composites plus 10 domain modules including org chart, data grid, PDF viewer, and virtual select) using React 18, TypeScript, Tailwind CSS, ShadCN UI, and Radix UI, documented in Storybook and consumed across all 7 apps.',
           'Built data-dense dashboards and visualizations with D3.js, Recharts, and AG Grid Enterprise; implemented layered state management with Zustand for global/UI state and TanStack Query for server state with caching and synchronization.',
-          'Set up and own CI/CD pipelines in Azure DevOps with Nx affected-only builds, automated lint/test gates, and per-PR preview deployments; established the testing strategy with Vitest/Jest unit tests and Playwright E2E suites in CI, using AI-assisted test generation (Claude, Copilot) to cut unit-test writing time by 60%.',
+          'Set up CI/CD pipelines in Azure DevOps with Nx affected-only builds, automated lint/test gates, and per-PR preview deployments; helped establish the testing strategy with Vitest/Jest unit tests and Playwright E2E suites in CI, using AI-assisted test generation (Claude, Copilot) to cut unit-test writing time by 60%.',
           'Enforced coding standards (ESLint + Prettier + Husky pre-commit hooks, PR review checklist); integrated Azure MSAL authentication with role-based access control; reduced bundle size by 30% via code splitting, lazy loading, and caching.',
-          'Led and mentored a frontend team of ~6 engineers on React patterns, state management, and monorepo workflows, driving architectural decisions and code reviews in Agile/Scrum ceremonies with product and backend teams.',
+          'Mentored fellow engineers on React patterns, state management, and monorepo workflows, contributing to architectural decisions and code reviews in Agile/Scrum ceremonies with product and backend teams.',
         ],
         tags: ['Nx Workspace', 'Micro-Frontends', 'React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'ShadCN UI', 'Radix UI', 'AG Grid Enterprise', 'D3.js', 'Recharts', 'Zustand', 'TanStack Query', 'Azure MSAL', 'RAG/LLM Integration', 'Claude', 'GitHub Copilot', 'Playwright', 'Vitest', 'Jest', 'Storybook', 'Zod', 'React Hook Form', 'Azure DevOps', 'Docusaurus'],
       },
@@ -153,7 +153,7 @@ const experiences: ExperienceGroup[] = [
         project: 'Modernized Processing System (MPS) – Financial Platform',
         projectUrl: 'https://www.google.com/search?q=WTP+Advisors+modernized+processing+system+transfer+pricing',
         period: 'Mar 2016 – Mar 2017',
-        summary: 'Financial application for WTP Advisors, a leader in international tax and transfer pricing technology — a high-performance web app processing transactional invoice data for tax optimization workflows.',
+        summary: 'Financial application for WTP Advisors, a leader in international tax and transfer pricing technology: a high-performance web app processing transactional invoice data for tax optimization workflows.',
         bullets: [
           'Designed and developed responsive, pixel-perfect, SEO-optimized interfaces using HTML5, CSS3, and AngularJS for high-traffic financial workflows.',
           'Built reusable components and interactive UI elements to enhance user experience across the platform.',
@@ -285,8 +285,7 @@ export const Experience: React.FC = () => {
       <div className="space-y-4 max-w-5xl mx-auto">
         {experiences.map((group) => {
           const isOpen = group.alwaysOpen || expandedId === group.id;
-          const multiple = group.engagements.length > 1;
-          const headline = group.engagements[0].role;
+          const headline = [...new Set(group.engagements.map(e => e.role))].join(' · ');
 
           return (
             <motion.div
@@ -306,9 +305,7 @@ export const Experience: React.FC = () => {
                     {group.company}
                   </h3>
                   <div className="flex flex-wrap items-center gap-2 mt-1.5">
-                    {!multiple && (
-                      <span className="text-primary font-semibold text-sm md:text-base">{headline}</span>
-                    )}
+                    <span className="text-primary font-semibold text-sm md:text-base">{headline}</span>
                     {group.engagements.map((eng, i) => (
                       <span
                         key={i}

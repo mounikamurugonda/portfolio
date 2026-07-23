@@ -4,7 +4,7 @@ import { Sparkle, PaperPlaneRight } from '@phosphor-icons/react';
 import { SectionWrapper } from '../ui/SectionWrapper';
 import { GlassCard } from '../ui/GlassCard';
 import { fadeInUp } from '../../lib/animations';
-import { fetcher } from '../../lib/api';
+import { streamChat } from '../../lib/api';
 
 const renderInline = (text: string): React.ReactNode[] =>
   text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
@@ -51,6 +51,7 @@ export const Chatbot: React.FC = () => {
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isStreaming, setIsStreaming] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   // Use a more controlled scroll that doesn't trigger the whole page to move
@@ -69,23 +70,42 @@ export const Chatbot: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim() || isLoading) return;
+    if (!input.trim() || isLoading || isStreaming) return;
 
     const userMsg = input;
     setInput('');
     setMessages(prev => [...prev, { role: 'user', content: userMsg }]);
     setIsLoading(true);
 
+    // Skeleton shows while isLoading; on the first streamed chunk we swap it
+    // for a real message bubble and grow it with each delta.
+    let started = false;
     try {
-      const data = await fetcher<{ reply?: string }>('/chat', {
-        method: 'POST',
-        body: JSON.stringify({ message: userMsg })
+      await streamChat(userMsg, (delta) => {
+        if (!started) {
+          started = true;
+          setIsLoading(false);
+          setIsStreaming(true);
+          setMessages(prev => [...prev, { role: 'ai', content: delta }]);
+        } else {
+          setMessages(prev => {
+            const next = [...prev];
+            const last = next[next.length - 1];
+            next[next.length - 1] = { ...last, content: last.content + delta };
+            return next;
+          });
+        }
       });
-      setMessages(prev => [...prev, { role: 'ai', content: data.reply || "Sorry, I couldn't process that right now." }]);
+      if (!started) {
+        setMessages(prev => [...prev, { role: 'ai', content: "Sorry, I couldn't process that right now." }]);
+      }
     } catch {
-      setMessages(prev => [...prev, { role: 'ai', content: "Mounika's neural sync is currently down for maintenance. Please try again later!" }]);
+      if (!started) {
+        setMessages(prev => [...prev, { role: 'ai', content: "Mounika's neural sync is currently down for maintenance. Please try again later!" }]);
+      }
     } finally {
       setIsLoading(false);
+      setIsStreaming(false);
     }
   };
 
@@ -135,20 +155,28 @@ export const Chatbot: React.FC = () => {
                         : 'chat-ai-bubble rounded-tl-sm'
                     }`}
                   >
-                    {msg.role === 'ai' ? <FormattedMessage content={msg.content} /> : msg.content}
+                    {msg.role === 'ai' ? (
+                      <>
+                        <FormattedMessage content={msg.content} />
+                        {isStreaming && i === messages.length - 1 && (
+                          <span className="inline-block w-0.5 h-3.5 ml-0.5 bg-primary animate-pulse align-middle" />
+                        )}
+                      </>
+                    ) : msg.content}
                   </div>
                 </motion.div>
               ))}
               {isLoading && (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   className="flex justify-start"
                 >
-                  <div className="chat-ai-bubble px-4 py-3 rounded-2xl rounded-tl-sm flex gap-1.5">
-                    <motion.div className="w-1.5 h-1.5 bg-primary rounded-full" animate={{ opacity: [0.4, 1, 0.4] }} transition={{ repeat: Infinity, duration: 0.8, delay: 0 }} />
-                    <motion.div className="w-1.5 h-1.5 bg-primary rounded-full" animate={{ opacity: [0.4, 1, 0.4] }} transition={{ repeat: Infinity, duration: 0.8, delay: 0.2 }} />
-                    <motion.div className="w-1.5 h-1.5 bg-primary rounded-full" animate={{ opacity: [0.4, 1, 0.4] }} transition={{ repeat: Infinity, duration: 0.8, delay: 0.4 }} />
+                  {/* Skeleton loader: shimmering text lines until the first streamed chunk arrives */}
+                  <div className="chat-ai-bubble px-4 py-3 rounded-2xl rounded-tl-sm w-[75%] max-w-[85%] space-y-2 animate-pulse">
+                    <div className="h-2.5 rounded-full bg-current opacity-15 w-full" />
+                    <div className="h-2.5 rounded-full bg-current opacity-15 w-11/12" />
+                    <div className="h-2.5 rounded-full bg-current opacity-15 w-3/5" />
                   </div>
                 </motion.div>
               )}
@@ -162,9 +190,9 @@ export const Chatbot: React.FC = () => {
                 placeholder="Ask me anything..." 
                 className="w-full chat-input rounded-full pl-5 pr-12 py-3 text-sm focus:outline-none focus:border-primary/50 transition-colors"
               />
-              <button 
-                type="submit" 
-                disabled={isLoading || !input.trim()}
+              <button
+                type="submit"
+                disabled={isLoading || isStreaming || !input.trim()}
                 className="absolute right-1 top-[9px] bottom-1 w-10 h-10 flex items-center justify-center text-primary hover:text-white transition-colors disabled:opacity-50"
               >
                 <PaperPlaneRight size={20} weight="fill" />

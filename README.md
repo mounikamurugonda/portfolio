@@ -1,4 +1,4 @@
-# Mounika Murugonda — AI-Powered Portfolio (Frontend)
+# Mounika Murugonda - AI-Powered Portfolio (Frontend)
 
 Personal portfolio of **Mounika Murugonda**, Senior Frontend Engineer (React · Angular · UI/UX · AI · Micro-Frontends · 13+ years).
 
@@ -10,10 +10,10 @@ This repository contains the **frontend** (React + Vite). The AI chatbot backend
 
 ## ✨ Features
 
-- **AI Twin chatbot** — a RAG-powered assistant that answers questions about Mounika's experience, backed by Supabase pgvector + Sarvam AI.
-- **Interactive experience timeline** — grouped engagements with expandable client projects.
-- **Design-system-driven UI** — glassmorphism cards, duotone Phosphor icons, Framer Motion animations, Lenis smooth scrolling.
-- **Contact form** — stores submissions in Supabase and triggers an email notification via Resend.
+- **AI Twin chatbot** - a RAG-powered assistant that answers questions about Mounika's experience, backed by Supabase pgvector + Sarvam AI.
+- **Interactive experience timeline** - grouped engagements with expandable client projects.
+- **Design-system-driven UI** - glassmorphism cards, duotone Phosphor icons, Framer Motion animations, Lenis smooth scrolling.
+- **Contact form** - stores submissions in Supabase and triggers an email notification via Resend.
 - **Light/dark ink-and-paper theme** with WCAG-conscious contrast.
 
 ## 🧱 Tech Stack
@@ -76,16 +76,16 @@ VITE_SUPABASE_URL=https://your-project.supabase.co
 VITE_SUPABASE_ANON_KEY=your_anon_public_key
 ```
 
-> Only the **anon public** key belongs in the frontend. Never put the service-role key in a `VITE_` variable — anything prefixed `VITE_` is bundled into public JavaScript.
+> Only the **anon public** key belongs in the frontend. Never put the service-role key in a `VITE_` variable - anything prefixed `VITE_` is bundled into public JavaScript.
 
 ### 3. Set up Supabase (one-time)
 
 1. Create a project at [database.new](https://database.new).
 2. Enable the `vector` extension (Database → Extensions).
 3. Run the SQL in [`supabase/migrations/20240101000000_init.sql`](supabase/migrations/20240101000000_init.sql) in the SQL Editor. It creates:
-   - `contacts` — contact-form submissions (RLS enabled; written via the backend service key only)
-   - `documents` — pgvector store (384-dim embeddings for `all-MiniLM-L6-v2`)
-   - `match_documents()` — the similarity-search function used by LangChain
+   - `contacts` - contact-form submissions (RLS enabled; written via the backend service key only)
+   - `documents` - pgvector store (384-dim embeddings for `all-MiniLM-L6-v2`)
+   - `match_documents()` - the similarity-search function used by LangChain
 
 ### 4. Run the dev server
 
@@ -95,7 +95,7 @@ npm run dev
 
 The site runs at **http://localhost:5173**. For a working chatbot, also start the backend from the `api-portfolio` repo (`npm run dev`, port 3000).
  
-The knowledge base is seeded from `scripts/seed-data.ts` in the `api-portfolio` repo — see its README for how to re-ingest after a resume update.
+The knowledge base is seeded from `scripts/seed-data.ts` in the `api-portfolio` repo - see its README for how to re-ingest after a resume update.
 
 ## 📦 Build & Deployment
 
