@@ -10,7 +10,7 @@ This repository contains the **frontend** (React + Vite). The AI chatbot backend
 
 ## ✨ Features
 
-- **AI Twin chatbot** - a RAG-powered assistant that answers questions about Mounika's experience, backed by Supabase pgvector + Sarvam AI.
+- **AI Twin chatbot** - a RAG-powered assistant that answers questions about Mounika's experience, backed by Supabase pgvector + Google Gemini.
 - **Interactive experience timeline** - grouped engagements with expandable client projects.
 - **Design-system-driven UI** - glassmorphism cards, duotone Phosphor icons, Framer Motion animations, Lenis smooth scrolling.
 - **Contact form** - stores submissions in Supabase and triggers an email notification via Resend.

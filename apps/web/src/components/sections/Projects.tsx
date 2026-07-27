@@ -97,7 +97,7 @@ const personalProjects = [
   },
   {
     title: 'AI Portfolio – RAG Chatbot Experience',
-    description: 'This site: an interactive portfolio with a RAG-powered AI chatbot (Sarvam AI + Supabase vector search), orbital skill visualization, and a dark glassmorphism design system.',
+    description: 'This site: an interactive portfolio with a RAG-powered AI chatbot (Google Gemini + Supabase vector search), orbital skill visualization, and a dark glassmorphism design system.',
     url: '#',
     label: "You're looking at it!",
     tags: ['React', 'Vite', 'Framer Motion', 'LangChain', 'Supabase', 'pgvector'],

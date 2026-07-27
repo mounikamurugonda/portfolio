@@ -31,7 +31,7 @@ function App() {
       <Contact />
 
       <footer className="py-8 text-center text-text-muted border-t border-white/10 mt-20 transition-colors">
-        <p>© {new Date().getFullYear()} Mounika. Crafted with ❤️ using React, TypeScript, Tailwind CSS, Framer Motion, and Sarvam AI.</p>
+        <p>© {new Date().getFullYear()} Mounika. Crafted with ❤️ using React, TypeScript, Tailwind CSS, Framer Motion, and Google Gemini.</p>
       </footer>
     </main>
   );
