@@ -26,7 +26,7 @@ function App() {
       <Experience />
       <Projects />
       <Education />
-      <Chatbot />
+      {/* <Chatbot /> */}
       <Hobbies />
       <Contact />
 

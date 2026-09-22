@@ -98,7 +98,7 @@ export const FloatingActions: React.FC = () => {
       </motion.button>
 
       {/* Ask AI branded FAB */}
-      <div className="relative">
+      {/* <div className="relative">
         {chatPulse && (
           <span className={`absolute inset-0 rounded-full animate-ping ${theme === 'light' ? 'bg-zinc-400/30' : 'bg-white/20'}`} />
         )}
@@ -121,7 +121,7 @@ export const FloatingActions: React.FC = () => {
           </motion.span>
           <span>Ask AI</span>
         </motion.button>
-      </div>
+      </div> */}
     </div>
   );
 };
